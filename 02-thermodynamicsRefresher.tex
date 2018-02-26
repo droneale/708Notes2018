@@ -1,0 +1,150 @@
+\section*{Thermodynamics - a refresher}
+We'll start with a quick overview of some of the important concepts from classical thermodynamics. Seeking a microscopic explanation for the macroscopic concepts presented here was an early motivation for the field of statistical mechanics. This section will also recap some content from 315.
+
+\subsection*{Macroscopic laws of thermodynamics}
+In thermodynamics we study a system --- the part of the world that we are interested in --- that is separated from its surroundings --- the rest of the universe --- by some boundary.
+
+We can classify the types of systems into three types based on the type of walls that define the system boundary:
+\begin{itemize}
+\item Adiabatic walls/isolated system --- no energy or matter is transferred
+\item Diathermal walls/closed system --- no matter can be transfered but heat can flow through the walls.
+\item (semi-)permeable walls/open system --- in addition to heat, one or more chemical species can be transfered through the walls. 
+\end{itemize}
+
+\subsection*{The four laws of thermodynamics}
+Only four laws are required to construct the relationships that control much of classical thermodynamics. We'll see later, that somewhat amazingly, these macroscopic laws arise naturally from the mathematics of the microscope systems. 
+
+These are, in brief:
+\begin{itemize}
+\item {\bf Zeroth law} Defines temperature and thermal equilibrium.
+\item {\bf First law} Formulates the principle of conservation of energy for thermodynamic systems. (Energy is conserved)
+\item {\bf Second law} Entropy increases; heat spontaneously flows from high to low temperatures.
+\item {\bf Third law} The absolute zero of temperature is not attainable.  
+\end{itemize}
+
+
+We'll revisit the first two laws in a bit more detail and then make use of the second law to derive some familiar properties of heat.
+
+\subsection*{Zeroth law:}
+If two systems are each in thermal equilibrium with a third system, then they are  also in thermal equilibrium with each other. This implies that they have some property in common. We call this property \emph{temperature}. (In the language of mathematics, thermal equilibrium is a transitive property.)
+
+It is worth noting that thermal equilibrium is not the same as thermodynamic equilibrium. For the latter we also need mechanical equilibrium ($P_1=P_2$) and chemical equilibrium ($\mu_1=\mu_2$ --- equal rates of reaction).
+
+\subsection*{First Law:}
+Energy remains constant for a (collection of) system(s) isolated from the surroundings. The energy of a system changes if we do work on the system, and/or if we supply heat to the system. We denote work done \emph{on} a system as $W>0$, similarly, heat supplied \emph{to} the system is denoted $Q>0$.
+
+When considering the change in energy $\Delta E$ of a system it is necessary to consider both work and heat.
+
+E.g. System $A$ gains energy from system $B$, i.e. $\Delta E_A = -\Delta E_B \implies \Delta E_A + \Delta E_B =0$. But, in general, $\Delta E_A\neq W_{B\rightarrow A}$ since there can also be a heat flow $Q_{B\rightarrow A}$ due to a temperature difference.
+So,
+$$\Delta E_A = W_{B\rightarrow A} + Q_{B\rightarrow A}$$
+$$\Delta E_B = W_{A\rightarrow B} + Q_{A\rightarrow B}.$$
+
+Energy conservation gives 
+$$\underbrace{(W_{A\rightarrow B}+W_{B\rightarrow A})}_{\text{Work done by the composite system}} + \underbrace{(Q_{A\rightarrow B}+Q_{B\rightarrow A})}_{\text{Heat flow in the composite system}} = 0$$
+
+In an adiabatic (isolated) system the fist law gives a sort of balance sheet for energy/work/heat:
+$W_{A\rightarrow B}+W_{B\rightarrow A} = 0$ and $Q_{A\rightarrow B}+Q_{B\rightarrow A}$.
+
+Revision: Adiabatic work and heat flow. Quasi-static processes (how slow is slow enough?). Path dependence of work.
+ - see the notes from 315 that are in the repository. You may want to incorporate the relevant content from those notes, or other sources, into this document.
+
+
+The \emph{internal energy} of a system is the energy associated with the internal degrees of freedom of the system. If a system is at rest and the potential energy of any external field is unimportant, then the internal energy of a system is the total energy of a system.
+
+The equation of state for internal energy is usually written $E = E(T,V,N)$ or $E = E(T,P,N)$. Expressing these as infinitesimals (change in internal energy) gives
+$$ dE = \frac{\partial E}{\partial T}\bigg\vert_{V,N}dT + \frac{\partial E}{\partial V}\bigg\vert_{T,N}dV +\frac{\partial E}{\partial N}\bigg\vert_{T,V}dN$$
+a similarly, for the second formulation.
+
+Note $ \frac{\partial E}{\partial T}\vert_{V,N} \neq \frac{\partial E}{\partial T}\vert_{P,N} $
+
+\subsection*{Heat capacity:}
+Heat flowing into a system causes a change in temperature (except in the case of phase transitions). $T\rightarrow T=\Delta T$. The heat capacity of a system depends, in part on the experimental conditions of the system under consideration. Two important cases are constant volume and constant pressure.
+
+For constant volume we have
+$$C_V = \frac{\delta Q}{dT}\bigg\vert_V$$
+similarly, for constant pressure,
+$$C_P = \frac{\delta Q}{dT}\bigg\vert_P.$$
+
+The first law of thermodynamics (conservation of energy) implies that $\delta Q = dE - \delta W = dE + PdV$  (since W = PdV$). So
+$C_V = \frac{\delta Q}{\partial T}\vert_{V,N} = \frac{\partial E}{\partial T}\vert_{V,N}$ (since $dV=0$ for fixed V.)
+In the constant pressure case $C_P = \frac{\delta Q}{dT}\vert_{P,N} = \frac{\partial E}{\partial T}\vert_{P,N} + P\frac{\partial V}{\partial T}\vert_{P,N}$.
+
+Constant pressure heat capacity implies that there is a change in volume, so think about how the volume changes. Define the \emph{volumetric thermal expansivity} $\alpha_p = \frac{1}{V}\frac{\partial V}{\partial T}\vert_{P,N} \implies V\alpha_p =\frac{\partial V}{\partial T}\vert_{P,N}$.
+
+We can now write $C_P = \frac{\partial E}{\partial T}\vert_{P,N} + \alpha_pPV$.
+
+An alternative way of thinking about $C_P$: constant pressure implies that $PdV = d(PV)$ so that $\delta Q = dE + \underbrace{dPV}_{=dW} = d(E+PV)$. We define the composite quantity $E+PV$ as \emph{enthalpy}, H, with the equation of state $H = H(T,P,N)$.
+
+The infinitesimal for enthalpy is $dH = \underbrace{dE +PdV}_{\delta Q}+ VdP = \delta Q + VdP\vert_{P}$. The last term is zero, since $P$ is constant, so we get $C_P = \frac{\delta Q}{\partial T}\vert_{P,N} = \frac{\partial H}{\partial T}\vert_{P,N} $.
+
+\subsection*{Intensive and extensive variables}
+
+Intensive variables  describe the state of a system but are independent of the system size. E.g. $T,P$
+
+Extensive, or additive, variables are proportionate to the size of a system (i.e. they depend on $N$).
+
+It is possible to turn an extensive variable into an intensive variable by normalising by the system size. I.e. the variables come in dual pairs, e.g. pressure and volume.
+
+(One important extensive variable is the entropy $S$ (or disorder) of a system. The dual variable is temperature.)
+
+The intensive variables  can be found as derivatives of the internal energy with respect to the corresponding extensive variable, given all other extensive variables are held constant. For example, $T = \frac{\partial E}{\partial S}\vert_{V,N}$.
+
+Given two systems 1 and 2, an extensive variable for the composite system $1\cup2$ can be found by simply adding the individual extensive variables. E.g. $N_{1\cup2} = N_1 + N_2$, $V_{1\cup2} = V_1 + V_2$, $E_{1\cup2} = E_1 + E_2$ ($E$ = internal energy).
+
+Actually, the case of internal energy is not entirely correct since there is often an interaction term between the two systems at the interface. I.e. $E_{1\cup2} = E_1+E_2+E_{int}$. Since $E_{int}$ depends on the interface between the two systems it scales like an area as a function of system size, while $E_1$ and $E_2$ will scale like a volume, so typically $\frac{E_{int}}{E_1+E_2}\rightarrow0$ as the system size gets big. E.g. an oil water interface (insert an image?).
+
+But this assumption clearly depends on the structural details of the interface. Imagine the oil-water interface in an emulsion like mayonnaise --- in this case the ratio  $\frac{E_{int}}{E_1+E_2}$ is more like $\mathcal{O}(1)$.
+Similarly, if there are significant long range interactions. (E.g.gravity --- it might not work using stat mech to model celestial mechanics.)
+
+\subsection*{The fundamental hypothesis of thermodynamics}
+It is possible to characterise the state of a thermodynamic system by specifying the values of a set of extensive variables.
+
+\subsection*{The central problem of thermodynamics}
+Given the initial state of equilibrium of several thermodynamic systems that are allowed to interact, determine the final thermodynamic state of equilibrium. (The boundaries of the systems --- adiabatic, closed, open --- determine the types of interactions that are allowed.) We want to pick a final thermodynamic equilibrium state from the space of all possible equilibrium states.
+
+Entropy plays a special role in this problem due to the entropy postulate (the second law of thermodynamics).
+
+The entropy postulate: there exists a function $S$ of the extensive variables $X_1,X_2,\ldots,X_r$ called the entropy that assumes a maximum value for a state of equilibrium among the space of possible states.
+
+Entropy has the following properties:
+\begin{enumerate}
+\item Extensivity: ($S$ is an extensive variable) If 1 and 2 are thermodynamic systems then $S_{1\cup2}=S_1+S_2$.
+\item Convexity: If $X^1=(X_0^1,X_1^1,\ldots,X_r^1)$ and  $X^2=(X_0^2,X_1^2,\ldots,X_r^2)$ are two thermodynamic states of the same system then for $0\leq\alpha\leq1$
+$$ S((1-\alpha)X^1+\alpha X^2)\geq (1-\alpha)S(X^1)+\alpha S(X^2) $$.
+I.e. the entropy of a linear combination of states is greater than or equal to the same linear combination of entropies of the individual states.
+A consequence of this is that if we take derivatives with respect to $\alpha$ at $\alpha=0$ we get
+$$\frac{\partial}{\partial \alpha} S((1-\alpha)X^1+\alpha X^2) = \sum_{i=0}^r\frac{\partial S}{\partial X_i}(X_i^2-X_i^1)$$
+and
+
+$$\frac{\partial}{\partial \alpha} \left[ (1-\alpha)S(X^1)+\alpha S(X^2) \right] = S(X^2)-S(X^1).$$
+
+So,
+$$ \sum_{i=0}^r\frac{\partial S}{\partial X_i}(X_i^2-X_i^1)\geq  S(X^2)-S(X^1).$$
+So the entropy surface (as a function of the other extensive variables) is always below the tangent plane of a point on the surface. We'll use this soon.
+\item Monotonicity: $S(E,X_1,\ldots,X_r)$ is a monotonically increasing function of the internal energy $E$. I.e. $\frac{\partial S}{\partial E}\vert_{X_1,\ldots,X_r} = \frac{1}{T}>0$.
+\end{enumerate}
+
+Using these three properties, it is possible to find the final equilibrium thermodynamic state amongst the space of possible states. The equilibrium states is the state with maximum entropy that satisfies the constrains on the system. (I.e. Maximum disorder - can also think about this in terms of it being the state with the greatest possible number of corresponding microstates, but we haven't quite got that far yet.)
+
+Worked example. Consider two systems, 1 and 2, in thermal contact such that they can exchange energy, but nothing else (I.e. no other extensive quantities change). The space of possible states is defined by 
+$$E^1+E^2 = X_0^1+X_0^2 = E = \text{const.}$$
+$$X_i^1 = \text{const.}\quad i=1,2,\ldots,r$$
+$$X_i^2 = \text{const.}\quad i=1,2,\ldots,r.$$
+We want to find the maximum of $S$ as a function of $E^1$ (we could just as well use $E^2$). Start by taking the derivative of $S$.
+
+$$\frac{\partial S}{\partial E^1} = \frac{\partial}{\partial E^1}\left(S^1(E^1,X_1^1,X_2^1,\ldots,X_r^1) + S^2(\underbrace{E-E^1}_{E=E^1+E^2},X_1^2,X_2^2,\ldots,X_r^2) \right) = \frac{\partial S^1}{\partial E^1}\bigg\vert_{E^1} -  \frac{\partial S^2}{\partial E^2}\bigg\vert_{E^2=E-E^1}.$$
+For $E^1$ at equilibrium we will write $E^1_{eq}$ (sim. for $E^2$). Then to maximise $S$ we must have
+$$\frac{\partial S}{\partial E^1}\bigg\vert_{E^1_{eq}} = \frac{\partial S^1}{\partial E^1}\bigg\vert_{E^1_{eq}} - \frac{\partial S^2}{\partial E^2}\bigg\vert_{E-E^1_{eq}}=0$$
+so $\frac{\partial S^1}{\partial E^1}\vert_{E^1_{eq}} = \frac{\partial S^2}{\partial E^2}\vert_{E_{eq}^2}$. We already have our first result --- the equilibrium state is the one where the change in entropy of the two systems, wrt, $E$ is equal. (The  monotonicity postulate equated this with inverse temperature.)
+
+Where does the heat in flow to in the system? The system started in an initial state with $E = E^1_{in}+E^2_{in}$. Since entropy increases to reach the maximum  value at equilibrium we have $S^1(E^1_{eq}) + S^2(E^2_{eq}) \geq S^1(E^1_{in}) + S^2(E^2_{in})$, i.e. $ S^1(E^1_{in}) - S^1(E^1_{eq})  +  S^2(E^2_{in}) - S^2(E^2_{eq}\geq 0$.
+
+The convexity property of entropy means that both systems have $S(E_{eq})-S(E_{in})\leq \frac{\partial S}{\partial E}\vert_{E_{in}}(E_{eq}-E_{in})$ and from the previous expression, the LHS of the inequality is bounded below by zero so we have
+$$\frac{\partial S^1}{\partial E^1}\bigg\vert_{E^1_{in}}(E_{eq}^1-E_{in}^1) + \frac{\partial S^2}{\partial E^2}\bigg\vert_{E^2_{in}}(\underbrace{E-E_{eq}^1}_{=E^2_{eq}}-E_{in}^2).$$
+
+But $E$ is conserved so $E=E^1_{in}+E^2_{in}$ so we have $E-E^1_{eq}-E^2_{in} = -(E^1_{eq}-E^1_{in})$ and therefore
+$$\left[\frac{\partial S^1}{\partial E^1}\bigg\vert_{E^1_{in}} - \frac{\partial S^2}{\partial E^2}\bigg\vert_{E^2_{in}}\right]\left(E^1_{eq}-E^1_{in}\right)\geq 0.$$
+
+This implies that energy flows to the  system with higher $\frac{\partial S}{\partial E}$. From the monotonicity postulate we identified  $\frac{\partial S}{\partial E}= \frac{1}{T}$ so energy flows into the system with lowest temperature, until the temperatures are equal.
+
