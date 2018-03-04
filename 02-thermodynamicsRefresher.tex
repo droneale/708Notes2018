@@ -1,31 +1,31 @@
-\section*{Thermodynamics - a refresher}
+\section*{Thermodynamics - A Refresher}
 We'll start with a quick overview of some of the important concepts from classical thermodynamics. Seeking a microscopic explanation for the macroscopic concepts presented here was an early motivation for the field of statistical mechanics. This section will also recap some content from 315.
 
-\subsection*{Macroscopic laws of thermodynamics}
+\subsection*{Macroscopic Laws of Thermodynamics}
 In thermodynamics we study a system --- the part of the world that we are interested in --- that is separated from its surroundings --- the rest of the universe --- by some boundary.
 
 We can classify the types of systems into three types based on the type of walls that define the system boundary:
 \begin{itemize}
 \item Adiabatic walls/isolated system --- no energy or matter is transferred
 \item Diathermal walls/closed system --- no matter can be transfered but heat can flow through the walls.
-\item (semi-)permeable walls/open system --- in addition to heat, one or more chemical species can be transfered through the walls. 
+\item (Semi-)permeable walls/open system --- in addition to heat, one or more chemical species can be transfered through the walls. 
 \end{itemize}
 
-\subsection*{The four laws of thermodynamics}
+\subsection*{The Four Laws of Thermodynamics}
 Only four laws are required to construct the relationships that control much of classical thermodynamics. We'll see later, that somewhat amazingly, these macroscopic laws arise naturally from the mathematics of the microscope systems. 
 
 These are, in brief:
 \begin{itemize}
-\item {\bf Zeroth law} Defines temperature and thermal equilibrium.
-\item {\bf First law} Formulates the principle of conservation of energy for thermodynamic systems. (Energy is conserved)
-\item {\bf Second law} Entropy increases; heat spontaneously flows from high to low temperatures.
-\item {\bf Third law} The absolute zero of temperature is not attainable.  
+\item {\bf Zeroth Law} Defines temperature and thermal equilibrium.
+\item {\bf First Law} Formulates the principle of conservation of energy for thermodynamic systems. (Energy is conserved)
+\item {\bf Second Law} Entropy increases; heat spontaneously flows from high to low temperatures.
+\item {\bf Third Law} The absolute zero of temperature is not attainable.  
 \end{itemize}
 
 
 We'll revisit the first two laws in a bit more detail and then make use of the second law to derive some familiar properties of heat.
 
-\subsection*{Zeroth law:}
+\subsection*{Zeroth Law:}
 If two systems are each in thermal equilibrium with a third system, then they are  also in thermal equilibrium with each other. This implies that they have some property in common. We call this property \emph{temperature}. (In the language of mathematics, thermal equilibrium is a transitive property.)
 
 It is worth noting that thermal equilibrium is not the same as thermodynamic equilibrium. For the latter we also need mechanical equilibrium ($P_1=P_2$) and chemical equilibrium ($\mu_1=\mu_2$ --- equal rates of reaction).
@@ -58,7 +58,7 @@ a similarly, for the second formulation.
 
 Note $ \frac{\partial E}{\partial T}\vert_{V,N} \neq \frac{\partial E}{\partial T}\vert_{P,N} $
 
-\subsection*{Heat capacity:}
+\subsection*{Heat Capacity:}
 Heat flowing into a system causes a change in temperature (except in the case of phase transitions). $T\rightarrow T=\Delta T$. The heat capacity of a system depends, in part on the experimental conditions of the system under consideration. Two important cases are constant volume and constant pressure.
 
 For constant volume we have
@@ -78,7 +78,7 @@ An alternative way of thinking about $C_P$: constant pressure implies that $PdV 
 
 The infinitesimal for enthalpy is $dH = \underbrace{dE +PdV}_{\delta Q}+ VdP = \delta Q + VdP\vert_{P}$. The last term is zero, since $P$ is constant, so we get $C_P = \frac{\delta Q}{\partial T}\vert_{P,N} = \frac{\partial H}{\partial T}\vert_{P,N} $.
 
-\subsection*{Intensive and extensive variables}
+\subsection*{Intensive \& Extensive Variables}
 
 Intensive variables  describe the state of a system but are independent of the system size. E.g. $T,P$
 
@@ -97,10 +97,10 @@ Actually, the case of internal energy is not entirely correct since there is oft
 But this assumption clearly depends on the structural details of the interface. Imagine the oil-water interface in an emulsion like mayonnaise --- in this case the ratio  $\frac{E_{int}}{E_1+E_2}$ is more like $\mathcal{O}(1)$.
 Similarly, if there are significant long range interactions. (E.g.gravity --- it might not work using stat mech to model celestial mechanics.)
 
-\subsection*{The fundamental hypothesis of thermodynamics}
+\subsection*{The Fundamental Hypothesis of Thermodynamics}
 It is possible to characterise the state of a thermodynamic system by specifying the values of a set of extensive variables.
 
-\subsection*{The central problem of thermodynamics}
+\subsection*{The Central Problem of Thermodynamics}
 Given the initial state of equilibrium of several thermodynamic systems that are allowed to interact, determine the final thermodynamic state of equilibrium. (The boundaries of the systems --- adiabatic, closed, open --- determine the types of interactions that are allowed.) We want to pick a final thermodynamic equilibrium state from the space of all possible equilibrium states.
 
 Entropy plays a special role in this problem due to the entropy postulate (the second law of thermodynamics).
@@ -148,6 +148,6 @@ $$\left[\frac{\partial S^1}{\partial E^1}\bigg\vert_{E^1_{in}} - \frac{\partial 
 
 This implies that energy flows to the  system with higher $\frac{\partial S}{\partial E}$. From the monotonicity postulate we identified  $\frac{\partial S}{\partial E}= \frac{1}{T}$ so energy flows into the system with lowest temperature, until the temperatures are equal.
 
-\subsection{Suggested reading}
+\subsection{Suggested Reading}
 Chapter 3 of \emph{Statistical Mechanics made Simple} (It's on the recommended reading list) covers the elements of thermodynamics nicely. Sections 3.1 to 3.5 in particular go over most of the concepts we have looked at here and introduce a few additional ideas.
 
