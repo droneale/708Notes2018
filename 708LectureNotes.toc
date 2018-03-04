@@ -1,0 +1,20 @@
+\contentsline {section}{\numberline {1}Thermodynamics - a refresher}{1}
+\contentsline {subsection}{\numberline {1.1}Macroscopic laws of thermodynamics}{2}
+\contentsline {subsection}{\numberline {1.2}Zeroth law:}{2}
+\contentsline {subsection}{\numberline {1.3}First Law:}{3}
+\contentsline {subsection}{\numberline {1.4}Heat capacity:}{3}
+\contentsline {subsection}{\numberline {1.5}Intensive and extensive variables}{4}
+\contentsline {subsection}{\numberline {1.6}The fundamental hypothesis of thermodynamics}{5}
+\contentsline {subsection}{\numberline {1.7}The central problem of thermodynamics}{5}
+\contentsline {subsection}{\numberline {1.8}Suggested reading}{7}
+\contentsline {section}{\numberline {2}Probability}{7}
+\contentsline {subsection}{\numberline {2.1}Probability generating functions}{8}
+\contentsline {subsection}{\numberline {2.2}Properties of generating functions}{8}
+\contentsline {subsection}{\numberline {2.3}The binomial distribution}{9}
+\contentsline {subsection}{\numberline {2.4}The Poisson distribution}{10}
+\contentsline {subsection}{\numberline {2.5}The expected long-run outcome of a binary process}{10}
+\contentsline {subsection}{\numberline {2.6}Brownian motion}{11}
+\contentsline {section}{\numberline {3}Statistical postulates}{12}
+\contentsline {subsection}{\numberline {3.1}An ideal gas}{12}
+\contentsline {subsection}{\numberline {3.2}Maxwell's postulates}{12}
+\contentsline {subsection}{\numberline {3.3}Equation of state}{13}
