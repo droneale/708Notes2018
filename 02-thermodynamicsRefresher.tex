@@ -1,7 +1,6 @@
 \section{Thermodynamics - A Refresher}
 We'll start with a quick overview of some of the important concepts from classical thermodynamics. Seeking a microscopic explanation for the macroscopic concepts presented here was an early motivation for the field of statistical mechanics. This section will also recap some content from 315.
 
-\subsection{Macroscopic Laws of Thermodynamics}
 In thermodynamics we study a system --- the part of the world that we are interested in --- that is separated from its surroundings --- the rest of the universe --- by some boundary.
 
 We can classify the types of systems into three types based on the type of walls that define the system boundary:
@@ -25,12 +24,12 @@ These are, in brief:
 
 We'll revisit the first two laws in a bit more detail and then make use of the second law to derive some familiar properties of heat.
 
-\subsection{Zeroth Law:}
+\subsection{Zeroth Law}
 If two systems are each in thermal equilibrium with a third system, then they are  also in thermal equilibrium with each other. This implies that they have some property in common. We call this property \emph{temperature}. (In the language of mathematics, thermal equilibrium is a transitive property.)
 
 It is worth noting that thermal equilibrium is not the same as thermodynamic equilibrium. For the latter we also need mechanical equilibrium ($P_1=P_2$) and chemical equilibrium ($\mu_1=\mu_2$ --- equal rates of reaction).
 
-\subsection{First Law:}
+\subsection{First Law}
 Energy remains constant for a (collection of) system(s) isolated from the surroundings. The energy of a system changes if we do work on the system, and/or if we supply heat to the system. We denote work done \emph{on} a system as $W>0$, similarly, heat supplied \emph{to} the system is denoted $Q>0$.
 
 When considering the change in energy $\Delta E$ of a system it is necessary to consider both work and heat.
@@ -58,7 +57,7 @@ a similarly, for the second formulation.
 
 Note $ \frac{\partial E}{\partial T}\vert_{V,N} \neq \frac{\partial E}{\partial T}\vert_{P,N} $
 
-\subsection{Heat Capacity:}
+\subsection{Heat Capacity}
 Heat flowing into a system causes a change in temperature (except in the case of phase transitions). $T\rightarrow T=\Delta T$. The heat capacity of a system depends, in part on the experimental conditions of the system under consideration. Two important cases are constant volume and constant pressure.
 
 For constant volume we have
@@ -100,7 +99,7 @@ Similarly, if there are significant long range interactions. (E.g.gravity --- it
 \subsection{The Fundamental Hypothesis of Thermodynamics}
 It is possible to characterise the state of a thermodynamic system by specifying the values of a set of extensive variables.
 
-\subsection*{The Central Problem of Thermodynamics}
+\subsection{The Central Problem of Thermodynamics}
 Given the initial state of equilibrium of several thermodynamic systems that are allowed to interact, determine the final thermodynamic state of equilibrium. (The boundaries of the systems --- adiabatic, closed, open --- determine the types of interactions that are allowed.) We want to pick a final thermodynamic equilibrium state from the space of all possible equilibrium states.
 
 Entropy plays a special role in this problem due to the entropy postulate (the second law of thermodynamics).
@@ -136,7 +135,7 @@ We want to find the maximum of $S$ as a function of $E^1$ (we could just as well
 $$\frac{\partial S}{\partial E^1} = \frac{\partial}{\partial E^1}\left(S^1(E^1,X_1^1,X_2^1,\ldots,X_r^1) + S^2(\underbrace{E-E^1}_{E=E^1+E^2},X_1^2,X_2^2,\ldots,X_r^2) \right) = \frac{\partial S^1}{\partial E^1}\bigg\vert_{E^1} -  \frac{\partial S^2}{\partial E^2}\bigg\vert_{E^2=E-E^1}.$$
 For $E^1$ at equilibrium we will write $E^1_{eq}$ (sim. for $E^2$). Then to maximise $S$ we must have
 $$\frac{\partial S}{\partial E^1}\bigg\vert_{E^1_{eq}} = \frac{\partial S^1}{\partial E^1}\bigg\vert_{E^1_{eq}} - \frac{\partial S^2}{\partial E^2}\bigg\vert_{E-E^1_{eq}}=0$$
-so $\frac{\partial S^1}{\partial E^1}\vert_{E^1_{eq}} = \frac{\partial S^2}{\partial E^2}\vert_{E_{eq}^2}$. We already have our first result --- the equilibrium state is the one where the change in entropy of the two systems, wrt, $E$ is equal. (The  monotonicity postulate equated this with inverse temperature.)
+so $\frac{\partial S^1}{\partial E^1}\vert_{E^1_{eq}} = \frac{\partial S^2}{\partial E^2}\vert_{E_{eq}^2}$. We already have our first result --- the equilibrium state is the one where the change in entropy of the two systems, wrt, $E$ is equal. (The  monotonicity postulate equated this with inverse temperature; hence, the equilibrium state must be the one where the temperatures of the two systems are equal.)
 
 Where does the heat in flow to in the system? The system started in an initial state with $E = E^1_{in}+E^2_{in}$. Since entropy increases to reach the maximum  value at equilibrium we have $S^1(E^1_{eq}) + S^2(E^2_{eq}) \geq S^1(E^1_{in}) + S^2(E^2_{in})$, i.e. $ S^1(E^1_{in}) - S^1(E^1_{eq})  +  S^2(E^2_{in}) - S^2(E^2_{eq}\geq 0$.
 
