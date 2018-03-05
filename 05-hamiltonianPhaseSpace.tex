@@ -5,16 +5,16 @@
 
 At a microscopic level, a thermodynamic system is comprised of $N$ particles, each with some mass $m_i$, which can interact with each other and with the boundaries of the system. (Although we are going to motivate this discussion with a thermodynamic system, everything the follows is also true for other systems where the total energy of the system is conserved --- i.e. anywhere that a Hamiltonian could show up.) If we know the positions and momenta  for each of the particles then we can completely describe the state of the system. In three dimensions, this means we must know the values for each of the $6N$ degrees of freedom (3 for position and 3 for momentum); more generally, we have $2d$ d.o.f. where $d$ is the number of d.o.f. for the positions. That is the state of the system is described by a point in a $6N$ (or $2d$) dimensional phase space.
 Once a point in the microscopic phase space is know, the evolution of the system is completely governed by the equations of motion for the system. These in turn are prescribed by the Hamiltonian of the system
-$$H = T+U,$$
-$T=$ kinetic energy, $U=$ potential energy. In general, $H$, $T$, and $U$ may all depend on both the positions and the momenta of the particles, however, for many systems we find that, conveniently, $T = \sum_i=1^N T_i$, where $T_i=\frac{{\bf p}_i^2}{2m_i}$, and the potential $U$ depends only on the positions: $U = U({\bf r}).$
+$$H = T+U = H({\bf r}, {\bf v}) = H({\bf q}, {\bf p}),$$
+$T=$ kinetic energy, $U=$ potential energy. In general, $H$, $T$, and $U$ may all depend on both the positions and the momenta of the particles, however, for many systems we find that, conveniently, $T = \sum_i=1^N T_i$, where $T_i=\frac{{\bf p}_i^2}{2m_i}$, and the potential $U$ depends only on the positions: $U = U({\bf q}).$
 
 If the Hamiltonian is known for a system, then the equations of motion for that system are given by the \textit{Hamiltonian equations of motion}:
 \begin{eqnarray*}
-	\frac{d{\bf r}_i}{dt} &=& ~~\frac{\partial H}{\partial {\bf p_i}}, \\
-	\frac{d{\bf p}_i}{dt} &=& -\frac{\partial H}{\partial {\bf r_i}}.
+	\frac{d{\bf q}_i}{dt} &=& ~~\frac{\partial H}{\partial {\bf p_i}}, \\
+	\frac{d{\bf p}_i}{dt} &=& -\frac{\partial H}{\partial {\bf q_i}}.
 \end{eqnarray*}
 
-If we write ${\bf x} = [{\bf r}^\top,{\bf p}^\top]^\top$, then we can compactly express the equations of motion as
+If we write ${\bf x} = [{\bf q}^\top,{\bf p}^\top]^\top$, then we can compactly express the equations of motion as
 \begin{equation}
 	\frac{d{\bf x}}{dt} = f({\bf x}) = J^{-1}\nabla H({\bf x}),
 \end{equation}
