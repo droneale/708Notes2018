@@ -5,7 +5,12 @@
 \contentsline {subsection}{\numberline {1.4}Heat Capacity:}{3}
 \contentsline {subsection}{\numberline {1.5}Intensive \& Extensive Variables}{4}
 \contentsline {subsection}{\numberline {1.6}The Fundamental Hypothesis of Thermodynamics}{5}
+<<<<<<< HEAD
 \contentsline {subsection}{\numberline {1.7}Suggested Reading}{7}
+=======
+\contentsline {subsection}{\numberline {1.7}The Central Problem of Thermodynamics}{5}
+\contentsline {subsection}{\numberline {1.8}Suggested Reading}{7}
+>>>>>>> master
 \contentsline {section}{\numberline {2}Probability}{7}
 \contentsline {subsection}{\numberline {2.1}Probability generating functions}{7}
 \contentsline {subsection}{\numberline {2.2}Properties of generating functions}{8}
