@@ -6,7 +6,7 @@
 At a microscopic level, a thermodynamic system is comprised of $N$ particles, each with some mass $m_i$, which can interact with each other and with the boundaries of the system. (Although we are going to motivate this discussion with a thermodynamic system, everything the follows is also true for other systems where the total energy of the system is conserved --- i.e. anywhere that a Hamiltonian could show up.) If we know the positions and momenta  for each of the particles then we can completely describe the state of the system. In three dimensions, this means we must know the values for each of the $6N$ degrees of freedom (3 for position and 3 for momentum); more generally, we have $2d$ d.o.f. where $d$ is the number of d.o.f. for the positions. That is the state of the system is described by a point in a $6N$ (or $2d$) dimensional phase space.
 Once a point in the microscopic phase space is know, the evolution of the system is completely governed by the equations of motion for the system. These in turn are prescribed by the Hamiltonian of the system
 $$H = T+U = H({\bf r}, {\bf v}) = H({\bf q}, {\bf p}),$$
-$T=$ kinetic energy, $U=$ potential energy. In general, $H$, $T$, and $U$ may all depend on both the positions and the momenta of the particles, however, for many systems we find that, conveniently, $T = \sum_i=1^N T_i$, where $T_i=\frac{{\bf p}_i^2}{2m_i}$, and the potential $U$ depends only on the positions: $U = U({\bf q}).$
+$T=$ kinetic energy, $U=$ potential energy. In general, $H$, $T$, and $U$ may all depend on both the positions and the momenta of the particles, however, for many systems we find that, conveniently, $T = \sum_{i=1}^{N} T_i$, where $T_i=\frac{{\bf p}_i^2}{2m_i}$, and the potential $U$ depends only on the positions: $U = U({\bf q}).$
 
 If the Hamiltonian is known for a system, then the equations of motion for that system are given by the \textit{Hamiltonian equations of motion}:
 \begin{eqnarray*}
@@ -73,11 +73,11 @@ For a non-linear transformation $\mathcal{A}$, we replace $A$ above with its jac
 
 An alternative, but equivalent, definition of a symplectic transformation --- and one that will turn out to be useful in a bit --- borrows some tools from differential geometry. (No prior experience with differential geometry is assumed.)
 
-{\bf Definitions:} A symplectic transformation is a diffeomorphisim (a smooth, invertible mapping between manifolds) $f:\mathbb{R}^{2d}\rightarrow\mathbb{R}^{2d}$, with coordinates $r$ and $p$, which preserves the symplectic two-form $\omega$ (an anti-symmetric, bilinear form) that acts on pairs of vectors and gives the sum of the oriented areas that they define. In two dimensions, this is the area of the parallelogram spanned by the two vectors.
+{\bf Definitions:} A symplectic transformation is a diffeomorphisim (a smooth, invertible mapping between manifolds) $f:\mathbb{R}^{2d}\rightarrow\mathbb{R}^{2d}$, with coordinates $q$ and $p$, which preserves the symplectic two-form $\omega$ (an anti-symmetric, bilinear form) that acts on pairs of vectors and gives the sum of the oriented areas that they define. In two dimensions, this is the area of the parallelogram spanned by the two vectors.
 
 More explicitly,
 \begin{equation*}
-	\omega(u,v) = u^\top Jv = \sum_{i=1}^d u_{p_i} v_{r_i} - u_{r_i} v_{p_i}.
+	\omega(u,v) = u^\top Jv = \sum_{i=1}^d u_{p_i} v_{q_i} - u_{q_i} v_{p_i}.
 \end{equation*}
 
 At this point it is necessary to introduce a (potentially) new concept --- the flow map of a vector field. The flow $\varphi_{t,f}({\bf x})$ of a Hamiltonian system is a function that maps a point ${\bf x}^*$ in the phase space of the system with equations of motion $\dot{\bf x} = f({\bf x}) =J^{-1}\nabla H({\bf x})$ forward by time $t$. I.e. for any $f({\bf x})$ and ${\bf x}_0$, $\varphi_{t,f}({\bf x}_0)$ gives the solution to $\dot{\bf x}=f({\bf x})$ at time $t$. That is, it shows the time evolution of {\bf x} and {\bf p} on the phase space.
