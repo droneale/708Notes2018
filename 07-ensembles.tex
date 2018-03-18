@@ -1,0 +1,153 @@
+\section{Ensembles}
+
+In the previous section, we considered an isolated system where we could keep track of the dynamics of every particle and use that to calculate the values of extensive, macroscopic properties of the system. An important aspect of this was the conservation of energy for the system. We refer to such systems as a \emph{micro-canonical ensemble} --- the system is isolated with no heat flux and no change in the number of particles, hence the internal energy of the system is constant and it is described entirely by the Hamiltonian dynamics
+
+We also saw (a couple of sections earlier) that we can equate the entropy of a system with the accessible volume of the phase space of that system. This was part of what motivated us to study the microscopic dynamics of the system using molecular dynamics.  We'd now like to consider some slightly more realistic cases where, for example, we may want to allow for multiple systems in contact.
+
+We'll start by considering the simplest case: two (isolated) systems in contact, without any exchange of energy. If the state of system 1 corresponds to the region of phase space $\Gamma^1$ and similarly, the state of system 2 to $\Gamma^2$ then the state of the composite system $1\cup 2$ corresponds to the phase space regions given by the Cartesian product $\Gamma^{1\cup 2}=\Gamma^1\times\Gamma^2$ and the volume of this accessible volume of phase space is given by $|\Gamma^{1\cup 2}|=|\Gamma^1||\Gamma^2|$. From this, it's easy to see that the entropy of the composite system is given by
+\begin{eqnarray*}
+	S &=& k_B\ln|\Gamma^{1\cup 2}| = k_B\ln(|\Gamma^1||\Gamma^2|)\\
+		&=& k_B\ln|\Gamma^1| + k_B\ln|\Gamma^2| = S^1 + S^2,
+\end{eqnarray*}
+which is fortunate, since entropy is an extensive variable and we therefore expect it to be additive.
+In this example the two sub-system were completely isolated from each other; the dynamics of one system had no influence on the dynamics of the other. This condition of dynamic independence corresponds to the independence of the observables that pertain to these sub-systems.
+
+Now, let's look at how the entropy of a composite system changes if we allow for the exchange of energy between the two sub-systems. This has the effect of increasing the accessible volume of the phase space, since exchange of energy means that there are more possible configurations for the overall system.
+
+Without energy exchange, the volume of the accessible phase space to the total system is given by
+$$
+	|\Gamma_0| = |\Gamma^1||\Gamma^2|.
+$$
+Once we allow for the exchange of energy, this becomes
+$$
+	|\Gamma| = \sum_{E^1}|\Gamma(E^1)||\Gamma^2(E_\text{tot}-E^1)|.
+$$
+That is, we must now consider all possible configurations where the total energy of the composite system is partitioned between the two sub-systems. This volume is bounded below by $|\Gamma_0|$ since the expression for $|\Gamma_0|$ is just one of the terms in the sum. At first glance, it may look like this increase in the volume of the accessible phase space is enormous (we have added many more possible configurations), however, the volume of the accessible phase space for the composite system corresponds almost entirely to the states where $E^1=E^1_\text{eqm}$ and $E^2=E^2_\text{eqm}$. As a consequence, for large enough $N$, the difference between $\Gamma$ and $|\Gamma^1(E^1_\text{eqm})|||\Gamma^2(E^2_\text{eqm})|$ is negligible. It's not too hard to show (see section 3.7 of \emph{Statistical Mechanics in a Nutshell}) that the contribution to the accessible phase space volume due to the exchange of energy between the two systems is of order $\sqrt{N}$ compared with the total system size $N$ --- small enough to be negligible when $N$ is large.
+
+\subsection*{The canonical ensemble}
+
+Rather than considering a perfectly isolated system, for which energy is conserved, a more realistic experimental situation may be to consider a system S in thermal contact with some much larger reservoir R. This has the effect of holding the total system at constant temperature. In such a situation we want to be able to calculate the average value $\langle A\rangle$ of an observable $A$ for the system S; we are not interested in the state of the reservoir R, except to the extent that it helps us determine the state of S.
+
+If, for the composite system S$\cup$R, we write $x_S,x_R$ for the state, te=hen the average value of the observable $A$ is given by
+$$
+	\langle A\rangle = \frac{1}{|\Gamma|}\int_{\Gamma}dx_Sdx_RA(x_s),
+$$
+where $\Gamma$ is the region of the phase space for the composite system, when it has total internal energy of $E$.
+
+In order to make explicit the parts of the total phase space that is accessible to the composite system, wewrite the above expression as the Cartesian product of the phase space for the system and the reservoir, i.e.
+$$
+	\langle A\rangle =\frac{1}{|\Gamma|}\int dx_SA(x_S)\times\int dx_R\delta(H^R(x_R)-(E-H^S(x_S))).
+$$
+The delta function in the last term is zero, except when $x_S$ and $x_R$ in the two sub-systems take values such that $H^S+H^R=E$. That is the delta function defines the accessible phase space volume when the two sub-systems can exchange internal energy between them, but the total internal energy of the composite system is conserved.
+
+Recalling the fundamental postulate of statistical mechanics ($S=k_B\ln|\Gamma|$), we rewrite the last expression to replace the phase space volume with the corresponding expression for entropy:
+$$
+	\int dx_R\delta(H^R(x_R)-(E-H^S(x_S))) \simeq \exp\left(\frac{1}{k_B}S^R(E-H^S)\right).
+$$
+
+Since $H^S$ is much less than $E$ it makes sense to now expand the exponential in a Taylor series about $E$:
+$$
+	\exp\left(\frac{1}{k_B}S^R(E-H^S)\right)\simeq \exp\left(\frac{1}{k_B}S^R(E)\right)\exp\left(\frac{-1}{k_B}\left.\frac{\partial S^R}{\partial E}\right|_E H^S(x_S)\right)\ldots
+$$
+
+Earlier in the course, we identified $\frac{\partial S}{\partial E}$ with $\frac{1}{T}$, and, for a canonical ensemble, $T$ is constant (that's the point of the reservoir) so we write the expected value of the observable as
+$$
+	\langle A\rangle \simeq \frac{1}{\Gamma}\int dx_sA(x_S)\times\exp\left(\frac{1}{k_B}s^R(E)\right)\exp\left(\frac{-H^S(x_S)}{k_BT}\right).
+$$
+
+It remains to make the normalisation precise. When we do this, the factors of $s\exp\left(\frac{1}{k_B}s^R(E)\right)$ cancel from the integral and its normalisation and we get
+\begin{equation}
+	\langle A\rangle = \frac{1}{Z}\int dx_SA(x_S)\exp\left(\frac{-H^S(x_S)}{k_BT}\right),
+	\label{eq:z1}
+\end{equation}
+where $Z$ is the known as the \emph{partition function} and is given by
+\begin{equation}
+	Z = \int dx_S\exp\left(\frac{-H^S(x_S)}{k_BT}\right).
+	\label{eq:z2}
+\end{equation}
+
+One way to think about equations \ref{eq:z1} and \ref{eq:z2} is that we no longer need to keep track of which parts of phase space are accessible. Instead we can integrate over the entire phase space and each region is weighted appropriately, according to $\exp\frac{-H}{k_BT}$ --- the so-called \emph{Boltzmann factor}, a probability density in the phase space.
+
+Similar to the case of the micro-canonical ensemble, for the canonical ensemble, the contributions to $A$ are dominated by the part of phase space that corresponds to when the system's internal energy is at the equilibrium value. 
+
+You should read through, and understand, section 3.12 of \emph{Statistical Mechanics in a Nutshell} and sections 4.1--4.3 of \emph{Statistical Mechanics Made Simple} for some extra details and explanation.
+
+\subsection*{Other ensembles}
+We can follow a similar approach to what we did for the canonical ensemble and generalise to other types of ensembles. If $f_i$ is some variable that we want to hold fixed and $X_i$ is the conjugate extensive variable, then putting the system in contact with a reservoir with which it can exchange $X_i$ gives
+\begin{equation*}
+	\langle A\rangle = \frac{1}{Z}\int dx_SA(x_S)\exp\left(\frac{f_iX^S_i(x_S)}{k_BT}\right),
+\end{equation*}
+where we have used the relation $\left.\frac{\partial S^R}{\partial X_i^R}\right|_E=-\frac{f_i}{T}$.
+
+Calculating the partition function proceeds similarly too, (see SMiaN, section 3.13) and gives
+\begin{equation*}
+	Z \simeq \exp\left(\frac{T^S(X_i^*)+f_iX_i^*}{k_BT}\right),
+\end{equation*}
+where $X_i^*$ is the value of $X_i$ which maximises the value of the exponential.
+
+The \emph{$p-T$ ensemble} is one specific example of a generalised ensemble. In this case the pressure and temperature are fixed, while the internal energy and volume (their conjugate variables) are allowed to fluctuate.
+Using the generalised formula above, and dropping the subscripts that we were previously using to denote the system, the $p-T$ ensemble is given by
+ \begin{equation*}
+	\langle A\rangle = \frac{1}{Z}\int dxA(x)\exp\left(-\frac{E(x)=pV(x)}{k_BT}\right),
+\end{equation*}
+while the partition function is given by
+$$
+	\ln Z = -\frac{E-TS+pV}{k_BT}.
+$$
+The quantity on the top of the fraction is the \emph{Gibbs free energy}. (See section 3.14 of SMiaN)
+
+Another important ensemble is the so-called \emph{grand ensemble} in which the number of particles in the system is also allowed to fluctuate due to, for example, chemical reactions, while the \emph{chemical potential} $\mu$ is held fixed. In this case the expression for the expected value of an observable is
+$$
+	\langle A \rangle = \frac{1}{Z} \sum_{N=1}^\infty \int dxA(x)\exp\left(-\frac{H_N(x)-\mu N}{k_BT}\right),
+$$
+while the corresponding partition function is given by
+$$
+	\ln Z = -\frac{E-TS-\mu N}{k_BT}.
+$$
+(See section 3.15 of SMiaN and section 4.4 of SMMS for more discussion of the grand canonical ensemble.)
+
+\subsection*{Information theory and the Gibbs Formula for entropy}
+To finish off this section, we'll look at one last application of entropy; not because it is particularly useful to physical systems in statistical mechanics, but because it gives a result that forms the basis of information theory.
+
+We'll return to a considering a generalised ensemble, like the one we looked at a couple of sections earlier. However, in this case we'll assume that the phase space is discretized and that the index $n$ runs over all of the microstates of the system. If we consider an intensive variable $f$ and its corresponding extensive variable $X$ then the expression for the expected value of any observable $A$ is
+$$
+	\langle A \rangle = \frac{1}{Z}\sum_n A_n\exp\left(\frac{fX_n}{k_BT}\right),
+$$
+while the partition function $Z$ is given by
+$$
+	Z =\sum_n\exp\left(\frac{fX_n}{k_BT}\right).
+$$
+
+The partition function is related to the thermodynamic potentials (see the previous section on generalised ensembles and SMiaN sections 3.12 and 3.13) via
+\begin{equation}
+	\ln Z = \frac{TS+f\langle X\rangle}{k_BT}.
+	\label{eq:gibbZ}
+\end{equation}
+
+Now, for any individual microstate n the probability is therefore given by
+$$
+	p_n = \frac{1}{Z}\exp\left(\frac{fX_n}{k_BT}\right).
+$$
+Taking the log of both sides of this expression gives
+$$
+	\ln p_n = \frac{fX_n}{k_BT} - ln Z,
+$$
+which after substituting \ref{eq:gibbZ} for $\ln Z$ gives
+$$
+	\ln p_n = \frac{1}{k_BT}(fX_n -TS -f\langle X\rangle).
+$$
+
+Now we can calculate the expected value of both side of the above equation
+$$
+	\langle \ln p_n \rangle = \sum_n p_n\ln p_n = \frac{1}{k_BT}(f\langle X\rangle -TS -\langle X \rangle) = \frac{-S}{kB}.
+$$
+
+After rearranging this for $S$ (and making explicit the sum for the expected value of $p_n$) we arrive at the \emph{Gibbs formula for entropy}:
+$$
+	S = -k_B\sum_np_n\ln p_n.
+$$
+
+Although this is elegant, it's generally useless in the context of physical systems since the number of microstates it would be necessary to sum over is far to large to be practical and, in any case, we generally don't know the probability distribution $p_n$ for each of the microstates. The value of this expression lies in it's application to other systems, particularly information theory, where it can be used to quantify amount of information in, for example a digital signal, in which case the $p_n$ represent the probability of receiving the $n$-th possible value in the list of signals.
+
+\subsection*{Recommended reading}
+Most of the notes in this section follow closely the second half of chapter 3 in \emph{Statistical Mechanics in a Nutshell}; specifically, section 3.6--3.18. Chapter four of \emph{Statistical Mechanics made Simple} covers the smae material in sections 4.0--4.4. It is gives some intuitive and succinct explanations, but I find it to be of more use \emph{after} you've already looked at SMiaN. Also useful, and with a slightly different presentation (perhaps with more traditional notation), is \emph{Entropy, Order Parameters, and Complexity}. Here the content is spread around a bit over chapters three through six. Much of the useful content, including some relevant to early sections of these notes, is in sections 3.1, 3.5, 6.1, 6.2, 6.3, and 5.3.
