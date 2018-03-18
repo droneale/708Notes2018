@@ -5,6 +5,18 @@
 
 At a microscopic level, a thermodynamic system is comprised of $N$ particles, each with some mass $m_i$, which can interact with each other and with the boundaries of the system. (Although we are going to motivate this discussion with a thermodynamic system, everything the follows is also true for other systems where the total energy of the system is conserved --- i.e. anywhere that a Hamiltonian could show up.) If we know the positions and momenta  for each of the particles then we can completely describe the state of the system. In three dimensions, this means we must know the values for each of the $6N$ degrees of freedom (3 for position and 3 for momentum); more generally, we have $2d$ d.o.f. where $d$ is the number of d.o.f. for the positions. That is the state of the system is described by a point in a $6N$ (or $2d$) dimensional phase space.
 Once a point in the microscopic phase space is know, the evolution of the system is completely governed by the equations of motion for the system. These in turn are prescribed by the Hamiltonian of the system
+<<<<<<< HEAD
+$$H = T+U,$$
+$T=$ kinetic energy, $U=$ potential energy. In general, $H$, $T$, and $U$ may all depend on both the positions and the momenta of the particles, however, for many systems we find that, conveniently, $T = \sum_i=1^N T_i$, where $T_i=\frac{{\bf p}_i^2}{2m_i}$, and the potential $U$ depends only on the positions: $U = U({\bf r}).$
+
+If the Hamiltonian is known for a system, then the equations of motion for that system are given by the \textit{Hamiltonian equations of motion}:
+\begin{eqnarray*}
+	\frac{d{\bf r}_i}{dt} &=& ~~\frac{\partial H}{\partial {\bf p_i}}, \\
+	\frac{d{\bf p}_i}{dt} &=& -\frac{\partial H}{\partial {\bf r_i}}.
+\end{eqnarray*}
+
+If we write ${\bf x} = [{\bf r}^\top,{\bf p}^\top]^\top$, then we can compactly express the equations of motion as
+=======
 $$H = T+U = H({\bf r}, {\bf v}) = H({\bf q}, {\bf p}),$$
 $T=$ kinetic energy, $U=$ potential energy. In general, $H$, $T$, and $U$ may all depend on both the positions and the momenta of the particles, however, for many systems we find that, conveniently, $T = \sum_{i=1}^{N} T_i$, where $T_i=\frac{{\bf p}_i^2}{2m_i}$, and the potential $U$ depends only on the positions: $U = U({\bf q}).$
 
@@ -15,6 +27,7 @@ If the Hamiltonian is known for a system, then the equations of motion for that 
 \end{eqnarray*}
 
 If we write ${\bf x} = [{\bf q}^\top,{\bf p}^\top]^\top$, then we can compactly express the equations of motion as
+>>>>>>> pr/2
 \begin{equation}
 	\frac{d{\bf x}}{dt} = f({\bf x}) = J^{-1}\nabla H({\bf x}),
 \end{equation}
@@ -73,11 +86,19 @@ For a non-linear transformation $\mathcal{A}$, we replace $A$ above with its jac
 
 An alternative, but equivalent, definition of a symplectic transformation --- and one that will turn out to be useful in a bit --- borrows some tools from differential geometry. (No prior experience with differential geometry is assumed.)
 
+<<<<<<< HEAD
+{\bf Definitions:} A symplectic transformation is a diffeomorphisim (a smooth, invertible mapping between manifolds) $f:\mathbb{R}^{2d}\rightarrow\mathbb{R}^{2d}$, with coordinates $r$ and $p$, which preserves the symplectic two-form $\omega$ (an anti-symmetric, bilinear form) that acts on pairs of vectors and gives the sum of the oriented areas that they define. In two dimensions, this is the area of the parallelogram spanned by the two vectors.
+
+More explicitly,
+\begin{equation*}
+	\omega(u,v) = u^\top Jv = \sum_{i=1}^d u_{p_i} v_{r_i} - u_{r_i} v_{p_i}.
+=======
 {\bf Definitions:} A symplectic transformation is a diffeomorphism (a smooth, invertible mapping between manifolds) $f:\mathbb{R}^{2d}\rightarrow\mathbb{R}^{2d}$, with coordinates $q$ and $p$, which preserves the symplectic two-form $\omega$ (an anti-symmetric, bilinear form) that acts on pairs of vectors and gives the sum of the oriented areas that they define. In two dimensions, this is the area of the parallelogram spanned by the two vectors.
 
 More explicitly,
 \begin{equation*}
 	\omega(u,v) = u^\top Jv = \sum_{i=1}^d u_{p_i} v_{q_i} - u_{q_i} v_{p_i}.
+>>>>>>> pr/2
 \end{equation*}
 
 At this point it is necessary to introduce a (potentially) new concept --- the flow map of a vector field. The flow $\varphi_{t,f}({\bf x})$ of a Hamiltonian system is a function that maps a point ${\bf x}^*$ in the phase space of the system with equations of motion $\dot{\bf x} = f({\bf x}) =J^{-1}\nabla H({\bf x})$ forward by time $t$. I.e. for any $f({\bf x})$ and ${\bf x}_0$, $\varphi_{t,f}({\bf x}_0)$ gives the solution to $\dot{\bf x}=f({\bf x})$ at time $t$. That is, it shows the time evolution of {\bf x} and {\bf p} on the phase space.
@@ -101,7 +122,11 @@ We are now in a position to prove that the flow of a Hamiltonian system preserve
 $$\text{Vol}(\varphi_{t,f}(\Gamma))=\text{Vol}(\Gamma)$$
 where $f=J^{-1}\nabla H$ and $\text{Vol}(\Gamma) = \int_{\Gamma}d{\bf x}$.
 
+<<<<<<< HEAD
+To prove this, we will actually prove a slightly more general case: the flow of a differential equation $\dot{\bf x}=f({\bf x})$ in $\mathbb{R}^n$ is volume preserving if and only if it is divergence free. I.e. $\nabla\cdot f=0$.
+=======
 To prove this, we will actually prove a slightly more general case: the flow of a differential equation $\dot{\bf x}=f({\bf x})$ in $\mathbb{R}^n$ is volume preserving if and only if it is divergence-free; i.e. $\nabla\cdot f=0$.
+>>>>>>> pr/2
 
 But first, why do we care about preservation of phase space volume? The fundamental postulate of statistical mechanics, $S=k_B\ln(\Omega)$ related the entropy of a system to the volume of the part of the phase space accessible to that system when it is in that particular thermodynamic state. We would like to be sure that this quantity doesn't vary too much over time as the microscopic system evolves, according to the Hamiltonian equations of motion. Although the microscopic system might be in continuous motion, the trajectories of the particles it is comprised of are such that the extensive variables which characterise the macroscopic state of the system are (almost) constant. I.e. there is no change in entropy, no heat flow, no work done while the system is at equilibrium. This is reassuring --- it says that disorder doesn't increase unless something happens.
 
@@ -110,7 +135,11 @@ The Jacobian of the flow map $\varphi_{t,f}({\bf x}_0)$ defines the matrix funct
 $$
 \dot{X}=A(t)X(t),\qquad X(0)=I,
 $$
+<<<<<<< HEAD
+where $A(t):=Df({\bf x}(t))$ denotes the Jacobian of $f({\bf x}(t))$ evaluated at ${\bf x}(t)=\varphi_{t,f}({\bf x}_0)$. To show that the volume defined by $X$ is constant we use  the Abel-Liouville-Jacobi-Ostrogradskii identity to find the time derivative of $\det X$:
+=======
 where $A(t):=Df({\bf x}(t))$ denotes the Jacobian of $f({\bf x}(t))$ evaluated at ${\bf x}(t)=\varphi_{t,f}({\bf x}_0)$. To show that the volume defined by $X$ is constant we use the Abel-Liouville-Jacobi-Ostrogradskii identity to find the time derivative of $\det X$:
+>>>>>>> pr/2
 $$
 \frac{d}{dt}\det X(t)=\text{trace} A(t)\cdot\det X(t).
 $$
