@@ -1,5 +1,8 @@
 \section{Ensembles}
 
+For a given macrostate $(N, V, E)$, a statistical system, at any time t, may be in any one of an extremely large number of distinct microstates. As time passes, the system transitions between microstates, with the result that, over a long enough time period the behaviour of the systems is ``averaged'' over the collection of microstates which have been visited by the system.
+A useful approach is to consider, at a single instant of time, a large (infinite) number of ``copies'' of the same system, existing in all possible microstates that satisfy the macroscopic conditions. Then, we can expect the average behaviour of any system for this collection (or ensemble) to be identical with the time-averaged behaviour of the system. This forms the basis of the so–called ensemble theory.
+
 In the previous section, we considered an isolated system where we could keep track of the dynamics of every particle and use that to calculate the values of extensive, macroscopic properties of the system. An important aspect of this was the conservation of energy for the system. We refer to such systems as a \emph{micro-canonical ensemble} --- the system is isolated with no heat flux and no change in the number of particles, hence the internal energy of the system is constant and it is described entirely by the Hamiltonian dynamics
 
 We also saw (a couple of sections earlier) that we can equate the entropy of a system with the accessible volume of the phase space of that system. This was part of what motivated us to study the microscopic dynamics of the system using molecular dynamics.  We'd now like to consider some slightly more realistic cases where, for example, we may want to allow for multiple systems in contact.
@@ -20,7 +23,7 @@ $$
 $$
 Once we allow for the exchange of energy, this becomes
 $$
-	|\Gamma| = \sum_{E^1}|\Gamma(E^1)||\Gamma^2(E_\text{tot}-E^1)|.
+	|\Gamma| = \sum_{E^1}|\Gamma^1(E^1)||\Gamma^2(E_\text{tot}-E^1)|.
 $$
 That is, we must now consider all possible configurations where the total energy of the composite system is partitioned between the two sub-systems. This volume is bounded below by $|\Gamma_0|$ since the expression for $|\Gamma_0|$ is just one of the terms in the sum. At first glance, it may look like this increase in the volume of the accessible phase space is enormous (we have added many more possible configurations), however, the volume of the accessible phase space for the composite system corresponds almost entirely to the states where $E^1=E^1_\text{eqm}$ and $E^2=E^2_\text{eqm}$. As a consequence, for large enough $N$, the difference between $\Gamma$ and $|\Gamma^1(E^1_\text{eqm})|||\Gamma^2(E^2_\text{eqm})|$ is negligible. It's not too hard to show (see section 3.7 of \emph{Statistical Mechanics in a Nutshell}) that the contribution to the accessible phase space volume due to the exchange of energy between the two systems is of order $\sqrt{N}$ compared with the total system size $N$ --- small enough to be negligible when $N$ is large.
 
