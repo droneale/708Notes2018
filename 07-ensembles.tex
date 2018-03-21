@@ -27,7 +27,7 @@ $$
 $$
 That is, we must now consider all possible configurations where the total energy of the composite system is partitioned between the two sub-systems. This volume is bounded below by $|\Gamma_0|$ since the expression for $|\Gamma_0|$ is just one of the terms in the sum. At first glance, it may look like this increase in the volume of the accessible phase space is enormous (we have added many more possible configurations), however, the volume of the accessible phase space for the composite system corresponds almost entirely to the states where $E^1=E^1_\text{eqm}$ and $E^2=E^2_\text{eqm}$. As a consequence, for large enough $N$, the difference between $\Gamma$ and $|\Gamma^1(E^1_\text{eqm})|||\Gamma^2(E^2_\text{eqm})|$ is negligible. It's not too hard to show (see section 3.7 of \emph{Statistical Mechanics in a Nutshell}) that the contribution to the accessible phase space volume due to the exchange of energy between the two systems is of order $\sqrt{N}$ compared with the total system size $N$ --- small enough to be negligible when $N$ is large.
 
-\subsection*{The canonical ensemble}
+\subsection{The canonical ensemble}
 
 Rather than considering a perfectly isolated system, for which energy is conserved, a more realistic experimental situation may be to consider a system S in thermal contact with some much larger reservoir R. This has the effect of holding the total system at constant temperature. In such a situation we want to be able to calculate the average value $\langle A\rangle$ of an observable $A$ for the system S; we are not interested in the state of the reservoir R, except to the extent that it helps us determine the state of S.
 
@@ -58,7 +58,7 @@ $$
 	\langle A\rangle \simeq \frac{1}{\Gamma}\int dx_sA(x_S)\times\exp\left(\frac{1}{k_B}s^R(E)\right)\exp\left(\frac{-H^S(x_S)}{k_BT}\right).
 $$
 
-It remains to make the normalisation precise. When we do this, the factors of $s\exp\left(\frac{1}{k_B}s^R(E)\right)$ cancel from the integral and its normalisation and we get
+It remains to make the normalisation precise. When we do this, the factors of $S\exp\left(\frac{1}{k_B}S^R(E)\right)$ cancel from the integral and its normalisation and we get
 \begin{equation}
 	\langle A\rangle = \frac{1}{Z}\int dx_SA(x_S)\exp\left(\frac{-H^S(x_S)}{k_BT}\right),
 	\label{eq:z1}
@@ -75,7 +75,7 @@ Similar to the case of the micro-canonical ensemble, for the canonical ensemble,
 
 You should read through, and understand, section 3.12 of \emph{Statistical Mechanics in a Nutshell} and sections 4.1--4.3 of \emph{Statistical Mechanics Made Simple} for some extra details and explanation.
 
-\subsection*{Other ensembles}
+\subsection{Other ensembles}
 We can follow a similar approach to what we did for the canonical ensemble and generalise to other types of ensembles. If $f_i$ is some variable that we want to hold fixed and $X_i$ is the conjugate extensive variable, then putting the system in contact with a reservoir with which it can exchange $X_i$ gives
 \begin{equation*}
 	\langle A\rangle = \frac{1}{Z}\int dx_SA(x_S)\exp\left(\frac{f_iX^S_i(x_S)}{k_BT}\right),
@@ -87,7 +87,16 @@ Calculating the partition function proceeds similarly too, (see SMiaN, section 3
 	Z \simeq \exp\left(\frac{T^S(X_i^*)+f_iX_i^*}{k_BT}\right),
 \end{equation*}
 where $X_i^*$ is the value of $X_i$ which maximises the value of the exponential.
-
+\subsection{The grand-canonical ensemble}
+Rather than holding $N$ the number of particles fixed we can allow it to vary and instead fix $\mu$ the chemical potential. The corresponding ensemble for this case is the so-called \emph{grand-canonical ensemble}. In this case, the expected falue of an observable $A$ is given by
+$$
+	\langle A\rangle = \frac{1}{Z}\sum_{N=1}^{\infty}\int\mathrm{d}xA(x)\exp\left(-\frac{H_N(x)-\mu N}{k_B T}\right)
+$$
+and the corresponding partition function is given by
+$$
+	Z=\exp\left(-\frac{E-TS-\mu N}{k_B T}\right).
+$$
+\subsection{The $P-T$ ensemble}
 The \emph{$p-T$ ensemble} is one specific example of a generalised ensemble. In this case the pressure and temperature are fixed, while the internal energy and volume (their conjugate variables) are allowed to fluctuate.
 Using the generalised formula above, and dropping the subscripts that we were previously using to denote the system, the $p-T$ ensemble is given by
  \begin{equation*}
@@ -109,7 +118,7 @@ $$
 $$
 (See section 3.15 of SMiaN and section 4.4 of SMMS for more discussion of the grand canonical ensemble.)
 
-\subsection*{Information theory and the Gibbs Formula for entropy}
+\subsection{Information theory and the Gibbs Formula for entropy}
 To finish off this section, we'll look at one last application of entropy; not because it is particularly useful to physical systems in statistical mechanics, but because it gives a result that forms the basis of information theory.
 
 We'll return to a considering a generalised ensemble, like the one we looked at a couple of sections earlier. However, in this case we'll assume that the phase space is discretized and that the index $n$ runs over all of the microstates of the system. If we consider an intensive variable $f$ and its corresponding extensive variable $X$ then the expression for the expected value of any observable $A$ is
@@ -127,7 +136,7 @@ The partition function is related to the thermodynamic potentials (see the previ
 	\label{eq:gibbZ}
 \end{equation}
 
-Now, for any individual microstate n the probability is therefore given by
+Now, for any individual microstate $n$ the probability is therefore given by
 $$
 	p_n = \frac{1}{Z}\exp\left(\frac{fX_n}{k_BT}\right).
 $$
@@ -152,5 +161,7 @@ $$
 
 Although this is elegant, it's generally useless in the context of physical systems since the number of microstates it would be necessary to sum over is far to large to be practical and, in any case, we generally don't know the probability distribution $p_n$ for each of the microstates. The value of this expression lies in it's application to other systems, particularly information theory, where it can be used to quantify amount of information in, for example a digital signal, in which case the $p_n$ represent the probability of receiving the $n$-th possible value in the list of signals.
 
-\subsection*{Recommended reading}
+
+
+\subsection{Recommended reading}
 Most of the notes in this section follow closely the second half of chapter 3 in \emph{Statistical Mechanics in a Nutshell}; specifically, section 3.6--3.18. Chapter four of \emph{Statistical Mechanics made Simple} covers the smae material in sections 4.0--4.4. It is gives some intuitive and succinct explanations, but I find it to be of more use \emph{after} you've already looked at SMiaN. Also useful, and with a slightly different presentation (perhaps with more traditional notation), is \emph{Entropy, Order Parameters, and Complexity}. Here the content is spread around a bit over chapters three through six. Much of the useful content, including some relevant to early sections of these notes, is in sections 3.1, 3.5, 6.1, 6.2, 6.3, and 5.3.

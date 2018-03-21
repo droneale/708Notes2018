@@ -1,0 +1,315 @@
+\section{Quantum statistical mechanics}
+
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\braket}[2]{\langle #1 | #2\rangle}
+
+In this section we want to extend the classical statistical mechanics concepts that we have seen so far to quantum mechanical systems. When we do so, we will find that two particular properties of quantum systems --- the (anti-)symmetry of the wave function for fermions (resp. bosons), and the indistinguishability of particles --- have consequences for the statistics of the ensembles that they are part of.
+
+In quantum mechanics we already have two layers of uncertainty about the state of a system: the Heisenberg uncertain principle $\Delta{p}\Delta {r}>{\hbar}/{2}$ means that rather than having a discrete point in phase space to describe the state of a system, the most precision we can hope for is some small region in phase space, centered on that point. Quantum mechanics also deals with probability distributions itself: the wave function $\psi_n({\bf r})$ (or rather $|\psi_n|^2$) describes the probability distribution of a particle being in a particular quantum state.
+
+Statistical mechanics adds an extra layer of probability to this situation in order to deal with ensembles that have probabilities $p_n$ of being in a variety of quantum states $\psi_n$. These quantum ensembles are called \emph{mixed states}. They are distinct from the superposition of quantum states. The superposition of two wave functions implies that the system is in a state comprised of both wave functions simultaneously, while the mixed state says that the system could be in one state or the other, or perhaps both. For example: if $\ket{H}$
+is the wave function for a horizontally polarized photon and $\ket{V}$ is the wave function for a vertically polarised photon, then the superposition $\frac{1}{\sqrt{2}}(\ket{H}+\ket{V})$ is a diagonally polarised photon, while the mixed state is an unpolarised photon that is half $\ket{H}$ and half $\ket{V}$ that could be in either state:  i.e. $\frac12\left(\ket{H}\bra{H}+\ket{V}\bra{V}\right)$.
+
+Given a quantum system in a particular state, represented by the wave function $\psi_n$, the quantum expectation of an operator $\hat{A}$ is given by
+$$
+	\langle\hat{A}\rangle_\text{QM} = \int\psi^*_n\hat{A}\psi_n.
+$$
+(I'll try to always use hats to denote quantum operators, but I'll probably forget them from time-to-time.)
+
+This is sometimes also denoted as $\langle\hat{A}\rangle_\text{pure}$ as it applies to a purely quantum state, where no possibilities of different statistical mechanical configurations exist.
+
+The statistical mechanical expectation operator for an ensemble is given by
+$$
+		\langle\hat{A}\rangle = \sum_n p_n\int\psi_n^*\hat{A}\psi_n.
+$$
+Quantum statistical mechanics is concerned with figuring out how the properties of $\psi_n$ affect the expected value of $\hat{A}$.
+
+\subsection{A refresher: bra-ket notation}
+The bra-ket notation, popularised by Dirac, gives us an extremely convenient and compact way of dealing with elements of a vector space (in QM, a Hilbert space) in various combinations. It doesn't introduce any new physics but it does let us, for example, use the same notation for an inner product of two quantities, whether they are finite-dimensional vectors or infinite dimensional functions.
+
+$\ket{v}$ by itself (pronounced ket $v$) is just the column vector (or function) $v$.
+
+$\bra{u}$ by itself (pronounced bra $u$) is interpreted as the conjugate transpose of $\ket{u}$, i.e. $\bra{u}=\ket{u}^*$.
+
+The notation becomes particularly convenient when we want to calculate inner products
+$$
+	\braket{u}{v} = u^*v
+$$
+for finite dimension vectors or 
+$$
+	\braket{u}{v} =	\int d{\bf r}u^*({\bf r})v({\bf r})
+$$
+for functions.
+
+Similarly, the outer product can be denoted 
+
+$$
+\ket{u}\bra{v}=uv^* =
+\begin{bmatrix}
+    u_1v^*_1 & u_1v^*_2  & \dots \\
+    u_2v^*_1 & u_2v^*_2  & \dots   \\
+    \vdots & \vdots & \ddots 
+\end{bmatrix}.
+$$
+
+For an operator $\hat{A}$ acting on a ket $\ket{v}$ we have $\hat{A}\ket{v} = \ket{\hat{A}v}$ and hence 
+$$
+	\bra{u}\hat{A}\ket{v}=\braket{u}{\hat{A}v} = u^*\hat{A}v
+$$
+Or, equivalently,  
+$$
+	\braket{u}{\hat{A}v} = \int d{\bf r} u^*({\bf r}) \hat{A} v({\bf r}).
+$$
+
+Bra-ket notation has a number of convenient properties; one that we will make use of shortly is that closed bra-ket sets commute with each other. This is easy to see by considering the vector case where a closed bra-ket pair is just a scalar.
+
+\subsection{The density matrix/density operator}
+Similar to the way that the single particle density is a convenient way of introducing a probability density into classical statistical mechanics, the density matrix $\rho = \sum_n p_n\ket{\psi_n}\bra{\psi_n}$ (or the density operator $\hat{\rho}$ in the case of functions) allows us to consider a probability distribution over an ensemble of quantum states.
+
+To see how the density matrix arises, we will begin with the expression we had earlier for the ensemble expectation of an observable corresponding to some operator $\hat{A}$, which we can now write in bra-ket notation.
+\begin{equation}
+	\langle\hat{A}\rangle = \sum_n p_n\bra{\psi_n}\hat{A}\ket{\psi_n}.
+	\label{eq:7.2}
+\end{equation}
+(We are going to assume throughout this section that all the vectors/wave functions that we deal with have already been normalised.) Now, if $\phi_a$ is any orthonormal basis then the identity operator is
+$$
+	Id = \sum_a\ket{\phi_a}\bra{\phi_a}.
+$$
+If we insert this into equation (\ref{eq:7.2}) for the expected value of $\hat{A}$ we get
+\begin{eqnarray*}
+	\langle\hat{A}\rangle &=& \sum_n p_n\bra{\psi_n} \left(\sum_a\ket{\phi_a}\bra{\phi_a}\right) |\hat{A}\ket{\psi_n}\\
+	&=& \sum_n p_n\sum_a\bra{\phi_a}\hat{A}\ket{\psi_n}\braket{\psi_n}{\phi_a}\\
+	&=& \sum_a \bra{\phi_a}\hat{A} \left(\sum_n p_n \ket{\psi_n}\bra{\psi_n}\right)\ket{\phi_a}\\
+	&=& \sum_a \bra{\phi_a}\hat{A}\rho\ket{\phi_a}\\
+	&=& \text{Tr}(\hat{A}\rho)
+\end{eqnarray*}
+where $\text{Tr}(M)$ denotes the trace of $M$ (in the case of a matrix, this is the sum over the diagonal elements).
+Normalisation means that we have $\text{Tr}(\rho)=1$ and $\sum_n p_n=1$.
+
+We can now use the density matrix to give some expressions for the quantum [micro-$|$grand-]canonical ensembles.
+
+\subsection{Quantum micro-canonical ensemble}
+We will consider a system with fixed $N$ and $V$. Because we are dealing with a quantum system, rather than fixing the total energy of the system we fix the interval $(E,E+\epsilon)$ where $\epsilon$ is some (small) uncertainty. We will denote by $E_j$ the (discrete) energy eigenstates that correspond to the Hamiltonian operator $\hat{H}$.
+
+The system has distinct accessible micro-states that correspond to the macro-state $(N,V,E;\epsilon)$. The number of distinct accessible states is given by counting over the phase space to get $\Gamma(N,V,E;\epsilon)$. We are going to assume that the probability of the system being in any of the energy states in the interval is equal --- this is the so-called \emph{equal a priori postulate}.
+
+The probability of the system being in a particular micro-state $E_j$ is therefore
+$$
+	p(E_j) =
+	\begin{cases}
+		\frac{1}{\Gamma} \text{ if } E<E_j<E+\epsilon\\
+		0 \text{ otherwise}
+	\end{cases}
+$$
+and, if we choose a basis such that the Hamiltonian operator $\hat{H}$ is diagonal, then the density matrix is the diagonal matrix
+$$
+	\rho = \sum_j p(E_j) \ket{E_j}\bra{E_j}.
+$$
+
+The entropy is given by
+$$
+	S(E) = k_B\ln\Gamma(E).
+$$
+At this point, it's worth noting that when we count the states that comprise $\Gamma$ we must do so in a quantum fashion, i.e. taking account of the indistinguishability of the quantum particles.
+
+We can also write this in a form similar to that for the Gibbs entropy that we saw in an earlier section:
+$$
+	S(E) = -k_b\sum_jp(E_j)\ln(p(E_j))=-k_B\text{Tr}(\rho\ln\rho).
+$$ 
+
+\subsection{Quantum canonical ensemble}
+Here we take:
+$$
+	p(E_j) = \frac{1}{Z}\exp\left(\frac{-1}{k_BT}E_j\right)
+$$
+and
+$$
+	Z = \sum_j \exp\left(\frac{-1}{k_BT}E_j\right).
+$$
+
+Agin, if we assume, that we have picked a basis where $\hat{A}$ is diagonal and has energy eigenstates $E_j$ (i.e. $\hat{H}\ket{E_j} = E_j\ket{E_j}$) then, we can write
+$$
+	\rho = \frac{1}{Z}\exp\left(\frac{-1}{k_BT}\hat{H}\right)
+$$
+where
+$$
+	Z = \text{Tr}\left[\exp\left(\frac{-1}{k_BT}\hat{H}\right)\right].
+$$
+
+\subsection{Quantum grand-canonical ensemble}
+The density matrix is given by
+$$
+	\rho = \frac{1}{Z}\exp\left(\frac{-1}{k_BT}(\mu\hat{N}-\hat{H})\right)
+$$
+with the corresponding partition function
+$$
+	Z = \text{Tr}\left[\exp\left(\frac{-1}{k_BT}(\mu\hat{N}-\hat{H})\right)\right].
+$$
+
+\subsection{Systems of indistinguishable particles}
+This is where we will see one of the more interesting consequences of quantum mechanics on statistical mechanics - namely how the symmetry of the wave function for the particles in our system affect the statistics of the system.
+
+We will consider a system of $N$ identical non-interacting particles --- an ideal quantum gas. Since the particles are non-interacting, the overall Hamiltonian $\hat{H}$ for the system is just the sum of the Hamiltonians for each of the individual particles:
+$$
+	\hat{H}({\bf r},{\bf p}) = \sum_i^N\hat{H_i},
+$$
+where $\hat{H}_i$ is the Hamiltonian of the $i$-th particle.
+
+The time-independent Schr\"odinger equation for the system is
+$$
+	\hat{H}\ket{\psi_E} = E\ket{\psi_E}
+$$
+where $E$ is an energy eigenvalue of $\hat{H}$ and $\psi_E$ is the corresponding eigenfunction.
+
+We can use the fact that $\hat{H}$ is a sum of non-interacting terms to write the solution $\psi_E$ as a product of the solutions to each of the individual particles: 
+$$
+	\psi_E = \prod_{i=1}^Nu_{\epsilon_i}
+$$
+where $\sum_{i=1}^N\epsilon_i = E$ and where $u_{\epsilon_i}$ is the eigenfunction of $\hat{H_i}$, i.e. $\hat{H_i}u_{\epsilon_i}={\epsilon_i}u_{\epsilon_i}$.
+
+Since the stationary state of the overall system can be described in terms of the constituent particles, we just need to specify how many particles are in each energy state. We write $n_i$ for the number of particles in the state with energy $\epsilon_i$ and $\{n_i\}$ for the set of all such $n_i$. We therefore have
+$$
+	\sum_i n_i =N \qquad \text{and} \qquad \sum_in_i\epsilon_i = E.
+$$
+
+The wave function for the overall state can now be written in terms of the particles in each of the distinct energy eigenstates
+\begin{equation}
+	\psi_E = \prod_{m=1}^{n_1}u_1(m)\prod_{m=n_1+1}^{n_1+n_2}u_2(m)\cdots
+	\label{eq:compfn}
+\end{equation}
+where $u_i(m)$ is the single particle wave function $u_{\epsilon_1}({\bf r}_m)$.
+That is, $\psi_E$ is the product of individual particle eigenfunction, each with degeneracy that corresponds to the number of particles in each energy state.
+We will refer to this as the Boltzmann wave function, which we will denote $\psi_\text{Boltz}$.
+
+Since the particles are identical, it is possible to permute their coordinates in (\ref{eq:compfn}) while keeping the system in the same state. I.e. the sequence of indices $(1,2,3,\ldots,N)$ are permuted to $(P1,P2,P3,\ldots,PN)$ where $P$ denotes mapping an index $m$ to the permuted index $Pm$. The resulting wave function will then be
+\begin{equation}
+	P\psi_E = \prod_{m=1}^{n_1}u_1(Pm)\prod_{m=n_1+1}^{n_1+n_2}u_2(Pm)\cdots.
+	\label{eq:permfn}
+\end{equation}
+
+
+In classical statistical mechanics, though the particles may be identical, we treat them as being distinguishable. That is permutation of two identical particles corresponds to two different, though identical, micro-states of the system with the same energy. (This is what leads to the necessity of introducing the Gibbs factor in classical statistical mechanics when evaluating the free energy of the canonical ensemble. We didn't go over this in lectures but you have all read sections 4.0--4.4 of \emph{Statistical Mechanics made Simple} by now, right?) The Gibbs factor $\frac{1}{n_1!n_2!\cdots}$ allows us to correct for the fact that the particles being permuted are \emph{effectively} indistinguishable and the permutation doesn't really correspond to a different micro-state of the system.
+
+In quantum mechanics, the particles are, \emph{in reality} indistinguishable. I.e. all that matters is the number of particles in each state --- the micro-states that occur from permutation are the same micro-state.
+Interchanging particle coordinates (i.e. the arguments of $u_i$) in the wave function (\ref{eq:compfn}) should, therefore, not lead to a new micro-state.
+
+How can we make sure that the wave function $\psi_E$ doesn't change under any of the above permutations? One way is to make $\psi_E$ be a linear combination of all the $N!$ possible wave functions that can be formed from such permutations such that the probability density for the quantum system stays the same: $|P\psi|^2=|\psi|^2$.
+
+There are two ways to satisfy this condition. The first is when $\psi$ is symmetric in all its arguments such that $P\psi = \psi$ for all possible permutations. The second way is when $\psi$ is anti-symmetric in its arguments such that
+$$
+	\psi = 
+	\begin{cases}
+		+\psi \text{ if $P$ is an even permutation, or}\\
+		-\psi \text{ if $P$ is an odd permutation.}
+	\end{cases}
+$$
+
+We will denote these solutions as $\psi_S$ and $\psi_A$ respectively. They can be written in terms of the Boltzmann wave function (\ref{eq:compfn}) as
+$$
+	\psi_S=c\sum_P P\psi_\text{Boltz}
+$$
+and
+$$
+	\psi_A=c\sum_P \delta_P(P)\psi_\text{Boltz}
+$$
+where $c$ is a normalisation constant and $\delta_P(P)$ is $+1$ or $-1$ depending on whether $P$ is an even or odd permutation, respectively.
+
+The wave function $\psi_A$ can be written as the \emph{Slater determinant} 
+$$
+	\Psi_A = c\det\begin{bmatrix}
+		u_i(1) & u_i(2) & u_i(3) & \dots & u_i(N)\\
+		u_j(1) & u_j(2) & u_j(3) & \dots & u_j(N)\\
+		u_k(1) & u_k(2) & u_k(3) & \dots & u_k(N)\\
+		\vdots & \vdots & \vdots & \ddots & \vdots \\
+		u_z(1) & u_z(2) & u_z(3) & \dots & u_z(N)
+	\end{bmatrix}
+$$
+
+When calculating the terms in the expansion of the determinant, the leading diagonal is the Boltzmann wave function (\ref{eq:compfn}) while the other terms are permutations of it. The signs for the permuted terms appear automatically in the right order as the determinant is calculated.
+
+Exchanging a pair of arguments in the wave function is the same as swapping a pair of columns of the matrix and causes the sign of the contribution to the determinate to change.
+
+If two or more particles are put into the same energy state, then the matrix has two or more identical rows and the determinant becomes zero --- the wave function vanishes. This implies that an anti-symmetric wave function corresponds to a quantum system where no two particles can be in the same state, i.e. the Pauli exclusion principle that applies to fermions. The statistics governing such systems are called \emph{Fermi-Dirac statistics}.
+
+For Fermi-Dirac statistics the weight factor $W_{F.D.}\{n_i\}$ for the state of the system is given by
+$$
+	W_{F.D.}\{n_i\} = 
+	\begin{cases}
+		1 \text{ if } \sum_i n_1^2 = N\\
+		0 \text{ if } \sum_i n_i^2 > N
+	\end{cases}
+$$
+
+
+For symmetric wave functions, there is no such restriction on the number of particles per state $n_i$ and the resulting statistics are called \emph{Bose-Einstein statistics}.
+
+Here the weight factor is
+$$
+	W_{B.E.}\{n_i\} = 1,\qquad i=0,1,2,\ldots.
+$$
+
+It is worth noting that although the properties we derived here all assumed systems of non-interacting particles, the same basic properties hold for systems of interacting particles where, even though the wave function for the system $\psi({\bf r})$ can not be expressed in terms of single-particles wave functions $u_i(r_m)$, it will nevertheless be either symmetric or anti-symmetric, resulting in either Bose or Fermi statistics.
+
+\subsection{An example: the quantum harmonic oscillator}
+We are going to consider a quantum harmonic oscillator (QHO) with frequency $\omega$ and energy levels $E_n = (n\frac12)\hbar\omega$.
+
+The partition function for the QHO is $Z^\text{QHO} = \sum_n\exp(-\beta E_n)$, where for convenience, I've put $\frac{1}{k_BT} = \beta$. Writing this out in full and exploiting the fact that we have a geometric series $\sum_n x^n = \frac{1}{1-x}$ we get
+\begin{eqnarray*}
+	Z^\text{QHO} &=& \sum_{n=0}^\infty \exp(-\beta\hbar\omega(n+\frac12))\\
+	&=& \exp(-\beta\hbar\omega/2)\sum_{n=0}^\infty(\exp(-\beta\hbar\omega))^n \\
+	&=& \exp(-\beta\hbar\omega/2)\frac{1}{1-\exp(-\beta\hbar\omega)}.
+\end{eqnarray*}
+
+To find the average internal energy, think back to when we first introduced the partition function to normalize the probability of a particle being in a state with a particular energy $E_n$.
+
+We have
+$$
+	\langle E\rangle = \sum_n E_n P_n = \frac{\sum_n E_n \exp(-\beta E_n)}{Z} = \frac{-\partial Z}{\partial \beta}\frac{1}{Z} = -\frac{\partial}{\partial \beta}\ln{Z},
+$$
+
+So,
+\begin{eqnarray*}
+	\langle E\rangle^\text{QHO} &=& -\frac{\partial}{\partial}\ln(Z^\text{QHO})\\
+	&=&  -\frac{\partial}{\partial\beta} \left[\ln\left( \exp(-\beta\hbar\omega/2)\frac{1}{1-\exp(-\beta\hbar\omega)}\right) \right] \\
+	&=& \frac{\partial}{\partial \beta} \left[ \beta\hbar\omega/2 - \ln\left(\frac{1}{1-\exp(-\beta\hbar\omega)}\right)\right]\\
+	&=& \frac{\partial}{\partial \beta} \left[ \beta\hbar\omega/2 + \ln\left({1-\exp(-\beta\hbar\omega)}\right)\right]\\
+	&=& \hbar\omega/2 + \frac{\hbar\omega\exp(-\beta\hbar\omega)}{1-\exp(-\beta\hbar\omega)}\\
+	&=& \hbar\omega\left(\frac12 +\frac{1}{\exp(\beta\hbar\omega)-1}\right)
+\end{eqnarray*}
+
+and expected value for the excitation level is $\langle n\rangle^\text{QHO} = 1/(\exp(\beta\hbar\omega)-1)$.
+
+\subsection{Fermionic and bosonic partition functions}
+With what we have recently covered on non-interacting quantum particles and with the above worked example for finding the expectation value for an observable of a quantum system, we will jump straight to the fermionic and bosonic grand canonical partition functions.
+
+For bosons, all fillings $n_k$ of the energy levels are allowed. Each particle in eigenstate $\psi_k$ contributes energy $\epsilon_k$ and chemical potential $\mu$, so for each particle the partition function is
+$$
+	Z_k^\text{boson} = \sum_{n_k=0}^\infty\exp(-\beta(\epsilon_k-\mu)n_k) = \sum_{n_k=0}^\infty\left(\exp(-\beta(\epsilon_k-\mu))\right)^n_k = \frac{1}{1-\exp(-\beta(\epsilon_k-mu))}.
+$$
+
+The partition function for the ensemble is therefore
+$$
+	Z^\text{boson} = \prod_{k=0} \frac{1}{1-\exp(-\beta(\epsilon_k-mu))}.
+$$
+
+The expected number of particles in each state can be calculated as
+$$
+	\langle n_k \rangle^\text{boson} = -\frac{\partial}{\partial \mu}(-\beta\ln(Z)) = \frac{1}{\exp(\beta(\epsilon_k-\mu))-1}.
+$$
+
+
+For fermions where $n_k=0$ or $n_k=1$ the single particle partition function is
+$$
+	Z_k^\text{fermion} = \sum_{n_k=0}^1 \exp(-\beta(\epsilon_k-\mu)n_k) = 1 + \exp(-\beta(\epsilon_k-\mu)),
+$$
+and the partition particle for an ensemble is
+$$
+	Z^\text{fermion} = \prod_k(1+ \exp(-\beta(\epsilon_k-\mu))).
+$$
+The expected number of fermions per state is therefore
+$$
+		\langle n_k \rangle^\text{fermion} = \frac{1}{\exp(\beta(\epsilon_k-\mu))+1}
+$$
+\subsection{Recommended reading}
+Although I've made lots of use of \emph{Statistical Mechanics in a Nutshell} in other sections of the course, I feel like it does particularly poorly with quantum systems. \emph{Statistical Mechanics made Simple} does better, but it doesn't give much of an overview of the fundamentals. So, for this section I've made use of \emph{Statistical Mechnaics} by R.K. Pathria, particularly the fundamentals in chapter five. Chapters six through eight give more details on ideal quantum systems and Fermi and Bose systems --- have a look at them too. The other useful text is \emph{Entropy, Order Parameters and Complexity} by J.P. Sethna, specifically chapter seven. You should read sections 7.6 and 7.7 for some simple examples on bosonic and fermionic systems. Finally, chapters five and six of SMmS covers bosonic and fermionic systems well once you've got the fundamentals sorted.
