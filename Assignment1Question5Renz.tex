@@ -1,0 +1,85 @@
+%RenzDelaCruz
+\documentclass[12pt, letterpaper, oneside, article]{memoir}
+\usepackage[USenglish]{babel}
+\usepackage{graphicx}
+\usepackage[numbers, square, sort&compress]{natbib}
+\usepackage{setspace}
+\usepackage{verbatim}
+\usepackage{eso-pic}
+\usepackage{makeidx}
+\citeindextrue
+\makeindex
+\usepackage[T1]{fontenc}
+\renewcommand*\rmdefault{phv}
+\usepackage[sumlimits, intlimits, namelimits]{amsmath}
+\usepackage[italic]{mathastext}
+\usepackage[sfdefault=fav,scaled=0.875]{isomath}
+\usepackage{chngcntr}
+\counterwithout{equation}{chapter}
+\chapterstyle{article}
+\setsecnumdepth{subsubsection}
+\settocdepth{subsubsection}
+\usepackage{indentfirst}
+\newlength{\myparindent}
+\setlength{\myparindent}{\parindent}
+\setlength{\textheight}{0.75\paperheight}
+\setlength{\textwidth}{0.66\paperwidth}
+\setlength{\oddsidemargin}{1.75cm}
+\setlength{\evensidemargin}{\oddsidemargin}
+\makeevenfoot{plain}{}{}{\thepage}
+\makeoddfoot{plain}{}{}{\thepage}
+
+\begin{document}
+
+Assignment
+Question 5
+\vspace{5mm}
+\chapter{Liouville's theorem and preservation of phase space volume}
+"All things on the Notes are written here."\\
+\\
+I would like to add...
+\subsection{Alternative Proof}
+\vspace{5mm}
+A fluid element volume for a Hamiltonian system in phase space is preserved in time. A volume element is $$dV(t)=d^fq(t)d^fp(t),$$\\
+the evolving system $$t \rightarrow t + \delta (t)$$\\
+$$dV(t+\delta t)=J(t+\delta t,t)dV(t),$$\\
+where \textit{J} is the Jacobian of the mapping. Now, 
+$$q_i(t+\delta t)=q_i+\dot{q_i}\delta t+O(\delta t^2)$$\\
+$$p_i(t+\delta t)=p_i+\dot{p_i}\delta t+O(\delta t^2),$$\\
+
+$$(q_i\equiv q_i(t) etc.,)$$ So,\\
+$$J(t+\delta t,t)=\frac{\partial(\vec{q}(t+\delta t),\vec{p}(t+\delta t))}{\partial (\vec{q}(t)\vec{p}(t))}$$\\
+
+$$=abs\begin{bmatrix}
+\frac{\partial q_i(t+\delta t)}{\partial q_j(t)}&\frac{\partial q_i(t+\delta t)}{\partial p_j(t)}\\
+\frac{\partial p_i(t+\delta t)}{\partial q_j(t)}&\frac{\partial p_i(t+\delta t)}{\partial p_j(t)}
+\end{bmatrix}
+$$\\
+
+$$=abs\begin{bmatrix}
+\delta_{ij}+\frac{\partial \dot{q}_i}{\partial q_j}\delta t&\frac{\partial \dot{q}_i}{\partial p_j}\delta t\\
+\frac{\delta\dot{p}_i}{\delta q_j}\delta t&\delta_{ij}+\frac{\delta \dot{p}_i}{\partial p_j}\delta t
+\end{bmatrix}+O(\delta t^2)
+$$\\
+But,\\
+$$det(1+\epsilon A)=1+\epsilon TrA+O(\epsilon^2)$$\\
+as\\
+$$det(1+\epsilon A)=\epsilon_{i_1...i_N}(1+\epsilon A)_{1i_1}...(1+\epsilon A)_{1N_N}$$\\
+$$=\epsilon_{12...N}+\epsilon [\epsilon_{{i_1}2...N}a_{{1_{i1}}}+\epsilon_{1i_{2}3...N}a_{2i_2}+...$$\\
+$$=1+\epsilon TrA+O(\epsilon ^2).$$\\
+So,\\
+$$J(t+\delta t,t)=1+\delta t\sum_{i}\Big( \frac{\partial \dot{q}_i}{\partial q_i}+\frac{\partial \dot p_i}{\partial p_i}\Big) +O(\delta t^2)$$\\
+$$=1+\delta t \sum_{i} \Big(\frac{\partial}{\partial q_i}\Big( \frac{\partial H}{\partial p_i}\Big)+\frac{\partial}{\partial p_i}\Big(-\frac{\partial H}{\partial q_i}\Big) \Big)+O(\delta t^2)$$\\
+$$=1+O(\delta t^2).$$\\
+Consider a volume in phase space given by\\
+$$V(t)=\int_{R(t)}dV(t),$$\\
+hence,\\
+$$V(t+\delta t)=\int_{R(t+\delta t)} dV(t+\delta t)=\int_{R(t)} J(t+\delta t)dV(t)=V(t)+O(\delta t^2)$$\\
+So,
+$$\frac{dV(t)}{dt}=0\rightarrow V(t) = const.,$$\\
+"therefore" i.e. volumes in phase space do not change in time.
+ \\
+ -Renz Dela Cruz
+\end{document}
+
+
