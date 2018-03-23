@@ -3,7 +3,7 @@
 For a given macrostate $(N, V, E)$, a statistical system, at any time t, may be in any one of an extremely large number of distinct microstates. As time passes, the system transitions between microstates, with the result that, over a long enough time period the behaviour of the systems is ``averaged'' over the collection of microstates which have been visited by the system.
 A useful approach is to consider, at a single instant of time, a large (infinite) number of ``copies'' of the same system, existing in all possible microstates that satisfy the macroscopic conditions. Then, we can expect the average behaviour of any system for this collection (or ensemble) to be identical with the time-averaged behaviour of the system. This forms the basis of the so–called ensemble theory.
 
-In the previous section, we considered an isolated system where we could keep track of the dynamics of every particle and use that to calculate the values of extensive, macroscopic properties of the system. An important aspect of this was the conservation of energy for the system. We refer to such systems as a \emph{micro-canonical ensemble} --- the system is isolated with no heat flux and no change in the number of particles, hence the internal energy of the system is constant and it is described entirely by the Hamiltonian dynamics. Note that this term is distinct from several similar terms used in physics, canonical systems and grand-canonical ensembles. In canonical systems, $(N, T, V)$ are fixed instead of $(N, E, V)$, with temperature being controlled by a heat reservoir; and in grand-canonical ensembles, $(\mu, T, V)$ are fixed (where $\mu$ is the chemical potential of the system), with the number of particles $N$ being allowed to vary.
+In the previous section, we considered an isolated system where we could keep track of the dynamics of every particle and use that to calculate the values of extensive, macroscopic properties of the system. An important aspect of this was the conservation of energy for the system. We refer to such systems as a \emph{micro-canonical ensemble} --- the system is isolated with no heat flux and no change in the number of particles, hence the internal energy of the system is constant and it is described entirely by the Hamiltonian dynamics
 
 We also saw (a couple of sections earlier) that we can equate the entropy of a system with the accessible volume of the phase space of that system. This was part of what motivated us to study the microscopic dynamics of the system using molecular dynamics.  We'd now like to consider some slightly more realistic cases where, for example, we may want to allow for multiple systems in contact.
 
@@ -50,7 +50,7 @@ $$
 
 Since $H^S$ is much less than $E$ it makes sense to now expand the exponential in a Taylor series about $E$:
 $$
-	\exp\left(\frac{1}{k_B}S^R(E-H^S)\right)\simeq \exp\left(\frac{1}{k_B}S^R(E)\right)\exp\left(\frac{-1}{k_B}\left.\frac{\partial S^R}{\partial E}\right|_E H^S(x_S)\right)\ldots
+	\exp\left(\frac{1}{k_B}S^R(E-H^S)\right)\simeq \exp\left(\frac{1}{k_B}S^R(E)\right)\exp\left(\frac{-1}{k_B}\left.\frac{\partial S^R}{\partial E}\right\|_E H^S(x_S)\right)\ldots
 $$
 
 Earlier in the course, we identified $\frac{\partial S}{\partial E}$ with $\frac{1}{T}$, and, for a canonical ensemble, $T$ is constant (that's the point of the reservoir) so we write the expected value of the observable as
@@ -80,15 +80,16 @@ We can follow a similar approach to what we did for the canonical ensemble and g
 \begin{equation*}
 	\langle A\rangle = \frac{1}{Z}\int dx_SA(x_S)\exp\left(\frac{f_iX^S_i(x_S)}{k_BT}\right),
 \end{equation*}
-where we have used the relation $\left.\frac{\partial S^R}{\partial X_i^R}\right|_E=-\frac{f_i}{T}$.
+where we have used the relation $\left.\frac{\partial S^R}{\partial X_i^R}\right\|_E=-\frac{f_i}{T}$.
 
 Calculating the partition function proceeds similarly too, (see SMiaN, section 3.13) and gives
 \begin{equation*}
 	Z \simeq \exp\left(\frac{T^S(X_i^*)+f_iX_i^*}{k_BT}\right),
 \end{equation*}
 where $X_i^*$ is the value of $X_i$ which maximises the value of the exponential.
-\subsection{The grand-canonical ensemble}
-Rather than holding $N$ the number of particles fixed we can allow it to vary and instead fix $\mu$ the chemical potential. The corresponding ensemble for this case is the so-called \emph{grand-canonical ensemble}. In this case, the expected falue of an observable $A$ is given by
+
+\subsubsection{The grand-canonical ensemble}
+Rather than holding $N$ the number of particles fixed we can allow it to vary and instead fix $\mu$ the chemical potential. The corresponding ensemble for this case is the so-called \emph{grand-canonical ensemble}. In this case, the expected value of an observable $A$ is given by
 $$
 	\langle A\rangle = \frac{1}{Z}\sum_{N=1}^{\infty}\int\mathrm{d}xA(x)\exp\left(-\frac{H_N(x)-\mu N}{k_B T}\right)
 $$
@@ -96,7 +97,8 @@ and the corresponding partition function is given by
 $$
 	Z=\exp\left(-\frac{E-TS-\mu N}{k_B T}\right).
 $$
-\subsection{The $P-T$ ensemble}
+
+\subsubsection{The $P-T$ ensemble}
 The \emph{$p-T$ ensemble} is one specific example of a generalised ensemble. In this case the pressure and temperature are fixed, while the internal energy and volume (their conjugate variables) are allowed to fluctuate.
 Using the generalised formula above, and dropping the subscripts that we were previously using to denote the system, the $p-T$ ensemble is given by
  \begin{equation*}
@@ -108,7 +110,7 @@ $$
 $$
 The quantity on the top of the fraction is the \emph{Gibbs free energy}. (See section 3.14 of SMiaN)
 
-Another important ensemble is the so-called \emph{grand ensemble} or grand-canonical ensemble in which the number of particles in the system is also allowed to fluctuate due to, for example, chemical reactions, while the \emph{chemical potential} $\mu$ is held fixed. In this case the expression for the expected value of an observable is
+Another important ensemble is the so-called \emph{grand ensemble} in which the number of particles in the system is also allowed to fluctuate due to, for example, chemical reactions, while the \emph{chemical potential} $\mu$ is held fixed. In this case the expression for the expected value of an observable is
 $$
 	\langle A \rangle = \frac{1}{Z} \sum_{N=1}^\infty \int dxA(x)\exp\left(-\frac{H_N(x)-\mu N}{k_BT}\right),
 $$
@@ -159,9 +161,80 @@ $$
 	S = -k_B\sum_np_n\ln p_n.
 $$
 
-Although this is elegant, it's generally useless in the context of physical systems since the number of microstates it would be necessary to sum over is far to large to be practical and, in any case, we generally don't know the probability distribution $p_n$ for each of the microstates. The value of this expression lies in it's application to other systems, particularly information theory, where it can be used to quantify amount of information in, for example a digital signal, in which case the $p_n$ represent the probability of receiving the $n$-th possible value in the list of signals.
+Although this is elegant, it's generally useless in the context of physical systems since the number of microstates it would be necessary to sum over is far to large to be computationally practical and, in any case, we generally don't know the probability distribution $p_n$ for each of the microstates. The value of this expression lies in it's application to other systems, particularly information theory, where it can be used to quantify amount of information in, for example a digital signal, in which case the $p_n$ represent the probability of receiving the $n$-th possible value in the list of signals.
+
+\subsection{Calculating things with ensembles}
+Let $\rho(q,p,t)$ be the probability density function that gives the probability that a system will be in states $(q,p)$ at time $t$. Now, consider an ensemble of systems characterised by $\rho$, for any choices of $(q,p)$. If $\rho(q,p,t) = \rho(H(q,p))$ --- i.e. $\rho$ is autonomous --- then $\frac{\partial \rho}{\partial t}=0$ and we say that the system is stationary.
+
+The canonical ensemble average $\langle f\rangle$ of some physical quantity $f(q,p)$ is
+$$
+	 \langle f\rangle = \frac{\int f(q,p)\rho(q,p)\mathrm{d}q\mathrm{d}p}{\int\rho{q,p}\mathrm{d}q\mathrm{d}p}.
+$$
+For fixed $N$, as we saw above, the natural choice for the probability density function is 
+$$
+\rho(q,p) \propto \exp\left(-\frac{H(q,p)}{k_BT}\right)
+$$ 
+and if we normalise this, so that $\int \rho =1,$ we have
+$$
+	\rho(q,p) = \frac{1}{Z}\exp\left(-H(q,p)/k_BT\right).
+$$
+For $N$ particles, in 3-D the normalisation factor is
+$$
+	Z(T,N,V) = \frac{1}{h^{3N}}\int\mathrm{d}^{3N}q\mathrm{d}^{3N}p\exp(-H(q,p)/k_BT),
+$$
+the so-called partition function.
 
 
+We often write the integral as an infinite sum, both for ease of notation, and because it makes sense for discrete systems like the QM systems we will meet soon. I.e. $Z=\sum_n\exp(-H_n/k_BT)$.
+
+Most quantities of interest for an ensemble can be calculated two ways; as a sum over states and as derivates of the partition function. For example:
+
+\subsubsection{Internal energy}
+The average value of the internal energy of an ensemble can be found by summing over each energy state $E_n$ of the system, weighted by the corresponding probability $p_n$. (In the following, we're going to use the notation $\beta =1/k_bT$. The quantity $\beta$ is referred to as the inverse temperature.)
+
+\begin{align*}
+	\langle E \rangle = \sum_n E_n p_n &= \frac{\sum_n E_n\exp(-\beta E_n)}{Z}\\
+	&= -\frac{\partial Z}{\partial \beta}\frac{1}{Z} = \frac{\partial}{\partial \beta} \ln(Z).
+\end{align*}
+
+\subsubsection{Specific heat}
+Let $c_v$ be the specific heat per particle in a system with constant volume. This means that when we add a unit of heat to the system, the temperature increases by $\frac{\partial\langle E\rangle}{\partial T}$ units. The total specific heat of the system, with $N$ particles, is given by
+\begin{align*}
+	Nc_v = \frac{\partial \langle E \rangle}{\partial T} &=  \frac{\partial \langle E \rangle}{\partial \beta} \frac{\mathrm(d)}{\mathrm{d}T}\\
+	&=\frac{-1}{k_bT^2} \frac{\partial^2 Z}{\partial \beta^2} \mbox{ since } \beta = 1/k_BT \mbox{ and } \langle E \rangle = \frac{-\partial Z}{\partial \beta}.
+\end{align*}
+
+We can expand the second to last expression in the equality above as a sum. This gives
+\begin{align*}
+	Nc_v &= \frac{-1}{k_bT^2} \frac{\partial}{\partial \beta} \frac{\sum_n E_n \exp(-\beta E_n)}{\sum_n\exp(-\beta E_n)}\\
+	&= \frac{-1}{k_BT^2}\left[\frac{\sum_n E_n\exp(-\beta E_n)}{Z}+ \frac{(\sum_n E_n\exp(-\beta E_n))^2}{Z^2}\right]\\
+	&= \frac{1}{k_BT}(\langle E \rangle^2 - \langle E^2\rangle).
+\end{align*}
+That is, the specific heat of the system is given by the RMS fluctuation in the internal energy of the system at constant temperature.
+
+\subsubsection{Entropy}
+We have
+$$
+	S = -k_B\sum_n p_n\ln(p_n).
+$$
+(This is the Gibbs formula for entropy that we saw a couple of pages ago.) Using $p_n = \frac{\sum_n \exp(-\beta E_n)}{Z}$, along with the properties of logs, one gets (do the calculation yourself --- it's not a tough one)
+$$
+	S = \frac{\langle E \rangle}{T} +k_B\ln(Z).
+$$
+Rearranging gives
+$$
+	\langle E \rangle -ST = -1/\beta \ln(Z) = A(T,V,N).
+$$
+
+The quantity $A(T,V,N)$ is the so-called Helmholtz free energy. It has the property that $S = \left.\frac{-\partial A}{\partial T}\right\|_{N,V}$.
+
+\subsubsection{Simple harmonic oscillator}
+A classical simple harmonic oscillator has $H(q,p) =p^2/2m + m\omega^2q^2/2$ where $\omega$ is the angular frequency of the oscillator. As an exercise, calculate the following for an ensemble consisting of a single oscillator.
+\begin{itemize}
+	\item The partition function $Z$;
+	\item The Helmholtz free energy $A_{\omega}(T)$;
+	\item The average internal energy $\langle E \rangle_{\omega}(T)$.
+\end{itemize}
 
 \subsection{Recommended reading}
-Most of the notes in this section follow closely the second half of chapter 3 in \emph{Statistical Mechanics in a Nutshell}; specifically, section 3.6--3.18. Chapter four of \emph{Statistical Mechanics made Simple} covers the smae material in sections 4.0--4.4. It is gives some intuitive and succinct explanations, but I find it to be of more use \emph{after} you've already looked at SMiaN. Also useful, and with a slightly different presentation (perhaps with more traditional notation), is \emph{Entropy, Order Parameters, and Complexity}. Here the content is spread around a bit over chapters three through six. Much of the useful content, including some relevant to early sections of these notes, is in sections 3.1, 3.5, 6.1, 6.2, 6.3, and 5.3.
+Most of the notes in this section follow closely the second half of chapter 3 in \emph{Statistical Mechanics in a Nutshell}; specifically, section 3.6--3.18. Chapter four of \emph{Statistical Mechanics made Simple} covers the same material in sections 4.0--4.4. It is gives some intuitive and succinct explanations, but I find it to be of more use \emph{after} you've already looked at SMiaN. Also useful, and with a slightly different presentation (perhaps with more traditional notation), is \emph{Entropy, Order Parameters, and Complexity}. Here the content is spread around a bit over chapters three through six. Much of the useful content, including some relevant to early sections of these notes, is in sections 3.1, 3.5, 6.1, 6.2, 6.3, and 5.3.
