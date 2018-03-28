@@ -64,8 +64,8 @@ $$
 
 Bra-ket notation has a number of convenient properties; one that we will make use of shortly is that closed bra-ket sets commute with each other. This is easy to see by considering the vector case where a closed bra-ket pair is just a scalar.
 
-\subsection{The density matrix/density operator}
-Similar to the way that the single particle density is a convenient way of introducing a probability density into classical statistical mechanics, the density matrix $\rho = \sum_n p_n\ket{\psi_n}\bra{\psi_n}$ (or the density operator $\hat{\rho}$ in the case of functions) allows us to consider a probability distribution over an ensemble of quantum states.
+\subsection*{The density matrix/density operator}
+Similar to the way that the single particle density is a convenient way of introducing a probability density into classical statistical mechanics, the density matrix $\rho = \sum_n p_n\ket{\psi_n}\bra{\psi_n}$ (or the density operator $\hat{rho}$ in the case of functions) allows us to consider a probability distribution over an ensemble of quantum states.
 
 To see how the density matrix arises, we will begin with the expression we had earlier for the ensemble expectation of an observable corresponding to some operator $\hat{A}$, which we can now write in bra-ket notation.
 \begin{equation}
@@ -152,7 +152,7 @@ This is where we will see one of the more interesting consequences of quantum me
 
 We will consider a system of $N$ identical non-interacting particles --- an ideal quantum gas. Since the particles are non-interacting, the overall Hamiltonian $\hat{H}$ for the system is just the sum of the Hamiltonians for each of the individual particles:
 $$
-	\hat{H}({\bf r},{\bf p}) = \sum_i^N\hat{H_i},
+	\hat{H}({\bf q},{\bf p}) = \sum_i^N\hat{H_i},
 $$
 where $\hat{H}_i$ is the Hamiltonian of the $i$-th particle.
 
@@ -178,7 +178,7 @@ The wave function for the overall state can now be written in terms of the parti
 	\psi_E = \prod_{m=1}^{n_1}u_1(m)\prod_{m=n_1+1}^{n_1+n_2}u_2(m)\cdots
 	\label{eq:compfn}
 \end{equation}
-where $u_i(m)$ is the single particle wave function $u_{\epsilon_1}({\bf r}_m)$.
+where $u_i(m)$ is the single particle wave function $u_{\epsilon_1}({\bf q}_m)$.
 That is, $\psi_E$ is the product of individual particle eigenfunction, each with degeneracy that corresponds to the number of particles in each energy state.
 We will refer to this as the Boltzmann wave function, which we will denote $\psi_\text{Boltz}$.
 
@@ -189,7 +189,7 @@ Since the particles are identical, it is possible to permute their coordinates i
 \end{equation}
 
 
-In classical statistical mechanics, though the particles may be identical, we treat them as being distinguishable. That is permutation of two identical particles corresponds to two different, though identical, micro-states of the system with the same energy. (This is what leads to the necessity of introducing the Gibbs factor in classical statistical mechanics when evaluating the free energy of the canonical ensemble. We didn't go over this in lectures but you have all read sections 4.0--4.4 of \emph{Statistical Mechanics made Simple} by now, right?) The Gibbs factor $\frac{1}{n_1!n_2!\cdots}$ allows us to correct for the fact that the particles being permuted are \emph{effectively} indistinguishable and the permutation doesn't really correspond to a different micro-state of the system.
+In classical statistical mechanics, though the particles may be identical, we treat them as being distinguishable. That is permutation of two identical particles corresponds to two different, though identical, micro-states of the system with the same energy. (This is what leads to the necessity of introducing the Gibbs factor in classical statistical mechanics when evaluating the free energy of the canonical ensemble.  The Gibbs factor $\frac{1}{n_1!n_2!\cdots}$ allows us to correct for the fact that the particles being permuted are \emph{effectively} indistinguishable and the permutation doesn't really correspond to a different micro-state of the system.
 
 In quantum mechanics, the particles are, \emph{in reality} indistinguishable. I.e. all that matters is the number of particles in each state --- the micro-states that occur from permutation are the same micro-state.
 Interchanging particle coordinates (i.e. the arguments of $u_i$) in the wave function (\ref{eq:compfn}) should, therefore, not lead to a new micro-state.
@@ -211,9 +211,9 @@ $$
 $$
 and
 $$
-	\psi_A=c\sum_P \delta_P(P)\psi_\text{Boltz}
+	\psi_A=c\sum_P \delta_PP\psi_\text{Boltz}
 $$
-where $c$ is a normalisation constant and $\delta_P(P)$ is $+1$ or $-1$ depending on whether $P$ is an even or odd permutation, respectively.
+where $c$ is a normalisation constant and $\delta_PP$ is $+1$ or $-1$ depending on whether $P$ is an even or odd permutation, respectively.
 
 The wave function $\psi_A$ can be written as the \emph{Slater determinant} 
 $$
@@ -236,7 +236,7 @@ For Fermi-Dirac statistics the weight factor $W_{F.D.}\{n_i\}$ for the state of 
 $$
 	W_{F.D.}\{n_i\} = 
 	\begin{cases}
-		1 \text{ if } \sum_i n_1^2 = N\\
+		1 \text{ if } \sum_i n_i^2 = N\\
 		0 \text{ if } \sum_i n_i^2 > N
 	\end{cases}
 $$
@@ -250,6 +250,53 @@ $$
 $$
 
 It is worth noting that although the properties we derived here all assumed systems of non-interacting particles, the same basic properties hold for systems of interacting particles where, even though the wave function for the system $\psi({\bf r})$ can not be expressed in terms of single-particles wave functions $u_i(r_m)$, it will nevertheless be either symmetric or anti-symmetric, resulting in either Bose or Fermi statistics.
+
+
+
+\subsection{Fermionic and bosonic partition functions}
+With what we have now covered on non-interacting quantum particles, in combination with what we learnt in the previous section on classical ensembles we are now in a position to introduce the quantum version of the partition function. We wil jump straight to the most commonly used case --- the fermionic and bosonic grand canonical partition functions.
+
+\subsubsection{Bose-Einstein Statistics}
+For bosons, all fillings $n_k$ of the energy levels are allowed. Each particle in eigenstate $\psi_k$ contributes energy $\epsilon_k$ and chemical potential $\mu$, so for each particle the partition function is
+$$
+	Z_k^\text{boson} = \sum_{n_k=0}^\infty\exp(-\beta(\epsilon_k-\mu)n_k) = \sum_{n_k=0}^\infty\left(\exp(-\beta(\epsilon_k-\mu))\right)^n_k = \frac{1}{1-\exp(-\beta(\epsilon_k-mu))}.
+$$
+
+The partition function for the ensemble is therefore
+$$
+	Z^\text{boson} = \prod_{k=0} \frac{1}{1-\exp(-\beta(\epsilon_k-mu))}.
+$$
+
+The expected number of particles in each state can be calculated as
+$$
+	\langle n_k \rangle^\text{boson} = -\frac{\partial}{\partial \mu}(-\beta\ln(Z)) = \frac{1}{\exp(\beta(\epsilon_k-\mu))-1}.
+$$
+
+\subsubsection{Fermi-Dirac statistics}
+For fermions where $n_k=0$ or $n_k=1$ the single particle partition function is
+$$
+	Z_k^\text{fermion} = \sum_{n_k=0}^1 \exp(-\beta(\epsilon_k-\mu)n_k) = 1 + \exp(-\beta(\epsilon_k-\mu)),
+$$
+and the partition particle for an ensemble is
+$$
+	Z^\text{fermion} = \prod_k(1+ \exp(-\beta(\epsilon_k-\mu))).
+$$
+The expected number of fermions per state is therefore
+$$
+		\langle n_k \rangle^\text{fermion} = \frac{1}{\exp(\beta(\epsilon_k-\mu))+1}
+$$
+
+\subsubsection{Maxwell-Boltzman statistics}
+Maxwell-Boltzman statistics describe the distribution of classical particles, however they are sometimes still useful in the context of quantum systems. (Partly because the maths for them is typically slightly simpler). The Maxwell-Boltzman statistics arise from initially treating particles as being distinguishable, but then dividing the number of micro-states by $N\!$ to account for the double-counting of states that results from doing this. This transformation to the statistics of indistinguishable particles amounts to the so-called dilute limit of M-B statistics in which F-D and B-E statistics are equivalent. The way to think about this is that if you have a large number of states for a small number of particles, even in a classical distribution there is a vanishingly small probability of having more than one particle per state, thus the F-D and B-E statistics are equivalent in this limit.
+
+The partition function for M-B statistics is the familiar
+$$
+	Z^{MB}_{ensemb} = \prod_k \exp(-\beta(\epsilon_k-\mu))
+$$
+and the expected number of particles in the $k$th energy state is
+$$
+\langle n\rangle_{MB} = \exp(-\beta(\epsilon_k-\mu)).
+$$
 
 \subsection{An example: the quantum harmonic oscillator}
 We are going to consider a quantum harmonic oscillator (QHO) with frequency $\omega$ and energy levels $E_n = (n\frac12)\hbar\omega$.
@@ -279,37 +326,5 @@ So,
 \end{eqnarray*}
 
 and expected value for the excitation level is $\langle n\rangle^\text{QHO} = 1/(\exp(\beta\hbar\omega)-1)$.
-
-\subsection{Fermionic and bosonic partition functions}
-With what we have recently covered on non-interacting quantum particles and with the above worked example for finding the expectation value for an observable of a quantum system, we will jump straight to the fermionic and bosonic grand canonical partition functions.
-
-For bosons, all fillings $n_k$ of the energy levels are allowed. Each particle in eigenstate $\psi_k$ contributes energy $\epsilon_k$ and chemical potential $\mu$, so for each particle the partition function is
-$$
-	Z_k^\text{boson} = \sum_{n_k=0}^\infty\exp(-\beta(\epsilon_k-\mu)n_k) = \sum_{n_k=0}^\infty\left(\exp(-\beta(\epsilon_k-\mu))\right)^n_k = \frac{1}{1-\exp(-\beta(\epsilon_k-mu))}.
-$$
-
-The partition function for the ensemble is therefore
-$$
-	Z^\text{boson} = \prod_{k=0} \frac{1}{1-\exp(-\beta(\epsilon_k-mu))}.
-$$
-
-The expected number of particles in each state can be calculated as
-$$
-	\langle n_k \rangle^\text{boson} = -\frac{\partial}{\partial \mu}(-\beta\ln(Z)) = \frac{1}{\exp(\beta(\epsilon_k-\mu))-1}.
-$$
-
-
-For fermions where $n_k=0$ or $n_k=1$ the single particle partition function is
-$$
-	Z_k^\text{fermion} = \sum_{n_k=0}^1 \exp(-\beta(\epsilon_k-\mu)n_k) = 1 + \exp(-\beta(\epsilon_k-\mu)),
-$$
-and the partition particle for an ensemble is
-$$
-	Z^\text{fermion} = \prod_k(1+ \exp(-\beta(\epsilon_k-\mu))).
-$$
-The expected number of fermions per state is therefore
-$$
-		\langle n_k \rangle^\text{fermion} = \frac{1}{\exp(\beta(\epsilon_k-\mu))+1}
-$$
 \subsection{Recommended reading}
 Although I've made lots of use of \emph{Statistical Mechanics in a Nutshell} in other sections of the course, I feel like it does particularly poorly with quantum systems. \emph{Statistical Mechanics made Simple} does better, but it doesn't give much of an overview of the fundamentals. So, for this section I've made use of \emph{Statistical Mechnaics} by R.K. Pathria, particularly the fundamentals in chapter five. Chapters six through eight give more details on ideal quantum systems and Fermi and Bose systems --- have a look at them too. The other useful text is \emph{Entropy, Order Parameters and Complexity} by J.P. Sethna, specifically chapter seven. You should read sections 7.6 and 7.7 for some simple examples on bosonic and fermionic systems. Finally, chapters five and six of SMmS covers bosonic and fermionic systems well once you've got the fundamentals sorted.
