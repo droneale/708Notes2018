@@ -57,6 +57,41 @@ a similarly, for the second formulation.
 
 Note $ \frac{\partial E}{\partial T}\vert_{V,N} \neq \frac{\partial E}{\partial T}\vert_{P,N} $
 
+\subsection{Third Law}
+From the second law, we are able to determine the entropy in terms of T by evaluating the integral:
+\[\int_{V_1}^{V_2}\frac{dQ_{\text{rev}}}{T}\bigg|_T = S(V_2,T) - S(V_1,T)\]
+of some system. We repeat this process while constantly lowering the temperature all the way to zero temp such that we get what Nernst postulated: $\lim\limits_{T\rightarrow 0}\Delta S_{V_1\rightarrow V_2}(T) \rightarrow 0$\\
+As $T\rightarrow0$, entropy becomes more and more independent of its coordinates. We can hypothesize that the entropy of all substances at T=0 is the same universal constant set to zero.\\
+We have small evidence for doing this for different substances.\\
+\\
+Consider Allotropic states of sulphur:
+\vspace{-4mm}
+\begin{figure}[!hbt]
+	\begin{center}
+%		\includegraphics[scale=0.05]{state}\par
+% removed this until the image file is added. Stephen?
+	\end{center}
+\end{figure}
+\vspace{-5mm}
+
+We have a monoclinic state and a rhombohedral state defined by its heat capacities $C_V^m$ and $C_V^{\rho}$ respectively. By cooling the substance very slowly, we can observe a transition at a temperature $T_c$, releasing latent heat $L$. By cooling the substance very quickly, we can avoid this transition and maintain in metastable equilibrium. If we desire to obtain the entropy at a temperature slightly above $T_c$, we have two possible paths given:
+\begin{align*}
+&1: S(T_c^{+}) = \int_{0}^{T_c^{+}}\frac{dTC_v^{m}(T)}{T} + S_m(0)\\
+&2: S(T_c^{+}) = \int_{0}^{T_c^{-}}\frac{dTC_v^{\rho}(T)}{T} + \frac{L}{T_c} + S_\rho(0)
+\end{align*}
+Which from measurements have verified that $S_m(0) = S_\rho(0)  = 0$ Which tells us that entropy is independent at $T = 0$\\
+Consider the consequences:
+\begin{align*}
+&(1) \lim\limits_{T\rightarrow 0}S(V,T) = 0  \rightarrow \lim\limits_{T\rightarrow 0}\frac{\partial S}{\partial V}\bigg|_T =0\\
+&(2) \alpha = \frac{1}{V}\frac{\partial V}{\partial T}\bigg|_P = -\frac{1}{V}\frac{\partial S}{\partial P}\bigg|_T \rightarrow 0\\
+&(3) S(T,V) - S(0,V) = \int_{0}^{T}\frac{C_vdT'}{T'}\\
+&(4) \text{Unattainability of $T=0$}
+\end{align*}
+The first consequence represent another expression for entropy leading to zero as the temperature tends to zero.\\
+The second consequence represent the extensivity of a system, manipulated by the maxwell's relation which tends to zero as the temperature tends to zero.\\
+The third consequence represents a finite range of possible entropy values for a given finite temperature value. But if the heat capacity is constant, we will get a logarithmic value of entropy which blows up as the temperature tends to zero. This can only be corrected for $\lim\limits_{T\rightarrow 0} C_v(T) \rightarrow 0$\\
+The fourth consequence implies that it is impossible to cool any system to absolute zero temperature in a finite number of steps. 
+
 \subsection{Heat Capacity}
 Heat flowing into a system causes a change in temperature (except in the case of phase transitions). $T\rightarrow T=\Delta T$. The heat capacity of a system depends, in part on the experimental conditions of the system under consideration. Two important cases are constant volume and constant pressure.
 
