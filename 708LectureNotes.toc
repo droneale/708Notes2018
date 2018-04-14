@@ -58,5 +58,5 @@
 \contentsline {subsection}{\numberline {8.2}Real-world networks: some examples}{45}
 \contentsline {subsection}{\numberline {8.3}Properties of networks}{46}
 \contentsline {subsection}{\numberline {8.4}Network growth models}{49}
-\contentsline {subsection}{\numberline {8.5}Exponential random graph models}{49}
-\contentsline {subsection}{\numberline {8.6}Recommended reading}{50}
+\contentsline {subsection}{\numberline {8.5}Exponential random graph models}{50}
+\contentsline {subsection}{\numberline {8.6}Recommended reading}{51}
