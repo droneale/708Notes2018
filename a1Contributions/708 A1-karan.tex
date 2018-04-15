@@ -1,0 +1,68 @@
+\documentclass[a4paper, 12pt]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{708 Assignment 1}
+\date{}
+\author{Karan Dasgupta}
+%===============================================================================
+\begin{document}
+\maketitle
+
+%\begin{abstract}
+%Your abstract.
+%\end{abstract}
+
+\section*{Question 3}
+Showing that Hamiltonians conserve energy, that is, $\frac{dH}{dt} = 0 $ along $x(t)$:\\
+Using $H=H(q(t),p(t))$, without any explicit time dependence, that is, $\frac{\partial H}{\partial t} = 0 $
+
+$$ \frac{dH}{dt} = \frac{\partial H}{\partial q_i} \frac{\partial q_i}{\partial t} + \frac{\partial H}{\partial p_i} \frac{\partial p_i}{\partial t}
+$$
+Substituting $$ \frac{\partial q_i}{\partial t} = \frac{\partial H}{\partial p_i}  \hspace{1cm} \& \hspace{1cm} \frac{\partial p_i}{\partial t} = - \frac{\partial H}{\partial q_i} $$
+Thus:
+$$ \frac{dH}{dt} = \frac{\partial H}{\partial q_i}\frac{\partial H}{\partial p_i} - \frac{\partial H}{\partial p_i} \frac{\partial H}{\partial q_i} = 0 
+$$
+as we required. \\
+
+This is a significant result for a few reasons. Firstly, the entropy of this system is shown to be an extensive variable, which according to the fundamental postulate of thermodynamics suggests that one can characterise the state of a thermodynamic system by a set of extensive variables, which are all observables.
+
+This also shows that even though the accessible phase space volume can change, we expect the Hamiltonian of the system to be conserved. This may also help us to identify this accessible phase space, since if we choose a phase space that doesn't satisfy this condition, we can determine that this is NOT part of the accessible phase space of the system. 
+
+In relation to ergodicity, which states that the variable, in this case energy, averaged over periods of time, exhibits similar behaviour to that over the accessible phase space volume, we show that if the Hamiltonian is conserved, that the internal energy doesn't change as $t \rightarrow \infty$. 
+\newpage
+\section*{Question 5}
+
+\subsection*{Random Walks}
+	
+There are a number of different kinds of random walks. One of the simplest is called the Pearson Random Walk, after Karl Pearson, where we have steps of a fixed length, in a random direction. Similarly, we can also have a random walk on a lattice - where we move between the nearest-neighbours on a fixed lattice.  Some others to consider are:
+\begin{itemize}
+\item Levy flight: where the steps are sized according to the power law distribution, and in random directions. Here, we may find that the effect of the largest step can dominate over the effect of the smaller steps. 
+\item Shrinking Steps: here, the random walk steps are decreasing in size, the random walker is getting tired. The length of step n is given by $\lambda ^n$, where $\lambda$ is a "shrinking constant" and is $<1$. 
+\item Growing Steps: here, the random walk steps increase in size, similar to the above case for shrinking steps. An example of this is in turbulent diffusion.
+\end{itemize}
+More generally, we can look at random walks in continuous space where steps are discrete in time, some discrete space where steps happen in continuous time, or as in the case of diffusion, where both space and time are continuous.\\
+
+Now, we can begin to examine the role that the spatial dimension plays in random walks. If we have a series of steps that trace some path of a random walker, we can define the "Exploration Sphere" as the range of points the random walker can be expected to visit in time $t$, in some arbitrary dimension $d$. We have seen that if the number of steps is proportionate to the length of time that particles move for, then the mean-square displacement is proportional to $\sqrt{t}$. The density of visited sites, $\rho$, is given by the ratio of sites visited to size of the exploration sphere: 
+$$ \rho \sim \frac{t}{\sqrt{t}^d} \sim t ^{\left( 1-\frac{d}{2} \right) } $$
+We arrive at this result by recognising that the numerator, $t$ is simply the number of sites visited, and $\sqrt{t}^d$ is a representation of the volume (omitting some constants). \\
+
+Examining $\rho$ for various $d$:
+$$ d<2: \rho \rightarrow 0 $$
+$$ d=2: \rho \rightarrow constant$$
+$$ d>2: \rho \rightarrow \infty$$
+
+This gives us a few insights about whether we return to the starting point or not. The first is that, for $d>2$, we are guaranteed to return the starting point, since the density of visited sites tends to infinity, termed "recurrent". Secondly, for $d<0$, $\rho$ tends to $0$, so we can't be certain that we will return to the starting point, termed "transient". Lastly, for the case $d=2$, that is, a path in the 2D plane, this technically falls within the recurrent regime, however we find that the mean time to return is $\infty$.
+\end{document}

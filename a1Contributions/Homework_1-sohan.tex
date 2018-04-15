@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\begin{document}
+
+\title{Q.5 and Q.3}
+\author{Sohan Ghodla}
+
+\maketitle
+
+\textbf {Q.5: Deriving Liouville's theorem using Continuity Equation}
+
+Suppose a closed system is observed over a very long period of time T. Now lets divide T into a very large(in the limit infinite) numbers of equally short intervals of time $dt$, namely $t_1, t_2, t_3$, . . . . 
+
+Let's assume that at any instant the particles in the system considered have a certain set of position (q) and momentum (p) coordinates. For that instant we could collect q,p of all particles in the system into one set $(q_s,p_s)$ where s = 1,2,3 . . . 3N and called that set A = $(q_s,p_s)$\\
+
+ Continuing in the same fashion we can obtain a set of points $A_1, A_2$, . . . which describes the system at time $t_1, t_2$, . . . We can imagine these points distributed in a 2s dimensional space with density  $\rho(q_s,p_s)$.\\
+
+This set of $A_1, A_2$, . . . has all the information of the system at $t_1, t_2, t_3$, . . . instants of time and is called an ensemble. The advantage of using this approach is that instead of considering the points in our actual system at different times we may now consider them simultaneously.
+
+Now we follow the movement of the phase point $A_1, A_2$, . . . These points should move according to the equations of motion.
+This movement of the phase points can be regarded as a steady flow of a gas in a 2s dimensional space. This allows us to apply the equation of continuity which expresses the conservation of the number of particles in the gas (in this case phase points) in our system.
+
+Assuming the phase points as a gas, Ergodic hypothesis claims that this gas  should fill up the entire volume of space. In other words, if we follow a gas molecule (phase point) in time than it should pass through every point in the space (phase space). \\
+According to the equation of continuity
+
+$$\frac{\partial\rho} {\partial t} +   \mathrm{div}(\rho \mathrm{v}) = 0$$
+where $\rho$ is the density and v is the velocity of the gas and $\rho$v represents the flux of the gas in a unit volume. For a steady flow $$\mathrm{div}(\rho \mathrm{v}) = 0$$
+For a 2s dimensional space, this will take the form $$ \displaystyle\sum_{i=1}^{2s}\frac{\partial}{\partial x_i}(\rho\mathrm{v}_i) = 0$$ 
+
+Here the $x_i$ are (q,p) and $v_i$ are ($\dot{q},\dot{p}$) which are given by the equations of motion. Thus we have $$ \displaystyle\sum_{i=1}^{s}\left[\frac{\partial}{\partial q_i} (\rho \dot{q_i}) + \frac{\partial}{\partial p_i}(\rho \dot{p_i}) \right] = 0 $$
+
+Expanding the derivatives gives $$\displaystyle\sum_{i=1}^{s} \left [\dot{q_i}\frac{\partial \rho}{\partial q_i} + \dot{p_i} \frac{\partial \rho}{\partial p_i}\right] + \rho \displaystyle\sum_{i=1}^{s} \left[ \frac{\partial \dot{q_i}}{\partial q_i}	 + \frac{\partial \dot{p_i}}{\partial p_i} \right] = 0$$
+
+where $$ \dot{q_i} = \frac{\partial H}{\partial p_i},    \dot{p_i} = -\frac{\partial H}{\partial q_i}  $$
+
+from Q.3 in the assignment we know that Hamiltonian is a constant of motion i.e. \textit H(t) = const and therefore  $$ \displaystyle\sum_{i=1}^{s} \left[ \frac{\partial \dot{q_i}}{\partial q_i}	 + \frac{\partial \dot{p_i}}{\partial p_i} \right] = 0$$
+
+Hence we get $$ \frac{d\rho}{dt} =  \displaystyle\sum_{i=1}^{s} \left (\dot{q_i}\frac{\partial \rho}{\partial q_i} + \dot{p_i} \frac{\partial \rho}{\partial p_i}\right) = 0 $$
+
+Therefore the distribution function is constant along the phase trajectory in the phase space. In other words the volume of the gas is preserved as it flows in the space. \\
+
+\textbf {Q.3}
+
+Hamilton's equations of motion are $$ \dot{q_i} = \frac{\partial H}{\partial p_i},    \dot{p_i} = -\frac{\partial H}{\partial q_i}  $$
+
+
+For a system with s particles 
+$$ \frac{dH(q,p,t)}{dt} =  \displaystyle\sum_{i=1}^{s} \left (\frac{\partial H}{\partial q_i}\dot{q_i} +  \frac{\partial H}{\partial p_i}\dot{p_i}\right) + \frac{\partial H}{\partial t}$$
+
+Considering that the Hamiltonian is explicitly not dependent on time with put $$\frac{\partial H}{\partial t} = 0 $$
+
+This implies $$ \frac{dH(q,p)}{dt} =  \displaystyle\sum_{i=1}^{s} \left (\frac{\partial H}{\partial q_i}\dot{q_i} +  \frac{\partial H}{\partial p_i}\dot{p_i}\right) $$
+
+Substituting values of $\dot{p_i}$ and $\dot{q_i}$ will give 
+$$ \frac{dH(q,p)}{dt} =  \displaystyle\sum_{i=1}^{s} \left (\frac{\partial H}{\partial q_i}\dot{q_i} +  \frac{\partial H}{\partial p_i}\dot{p_i}\right)  = 0 $$
+
+There Poison bracket [H,H] = 0, hence H is a constant of motion. \\ From Q.5 we can see that this property of the Hamiltonian plays a very crucial role in making $ \rho$ time independent which leads to preservation of volume of the phase space as the system develops over time. \\ If the Hamiltonian wasn't a constant of motion then the flow of gas in phase space considered in Q.5 wouldn't be a steady flow. Also it's possible that the system wouldn't be an ergodic system but we can't say for sure as that depends on how the Hamiltonian varies in time.
+
+\end{document}
