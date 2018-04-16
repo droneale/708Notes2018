@@ -7,3 +7,5 @@
 
 *.gz
 state.jpg
+
+.ipynb_checkpoints/erdos_renyi_growth-checkpoint.ipynb
