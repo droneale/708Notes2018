@@ -57,6 +57,7 @@
 \contentsline {subsection}{\numberline {8.1}An introduction to graph theory \& networks}{44}
 \contentsline {subsection}{\numberline {8.2}Real-world networks: some examples}{45}
 \contentsline {subsection}{\numberline {8.3}Properties of networks}{46}
-\contentsline {subsection}{\numberline {8.4}Network growth models}{49}
-\contentsline {subsection}{\numberline {8.5}Exponential random graph models}{50}
-\contentsline {subsection}{\numberline {8.6}Recommended reading}{51}
+\contentsline {subsection}{\numberline {8.4}Probability Generating Functions \& Networks}{48}
+\contentsline {subsection}{\numberline {8.5}Network growth models}{49}
+\contentsline {subsection}{\numberline {8.6}Exponential random graph models}{50}
+\contentsline {subsection}{\numberline {8.7}Recommended reading}{51}
