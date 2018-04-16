@@ -171,7 +171,7 @@ To do this, we introduce the Lagrange multipliers $\alpha$ and $\theta_i$ and so
 $$
 	\frac{\partial}{\partial P(G)}\left[S + \alpha \left(1-\sum_G P(G)\right) + \sum_i \theta_i \left(\langle X_i \rangle - \sum_G P(G)X_i(G)\right) \right] = 0
 $$
-for all graphs $G$. The number of constraints required to be staisfied, would determine the number of Lagrange multipliers needed to be introduced. 
+for all graphs $G$. The number of constraints required to be staisfied would determine the number of Lagrange multipliers needed to be introduced. 
 Taking the differential inside we end up with the following (We will work out the steps in Class):
 $$
 	\ln P(G) +1 +\alpha +\sum_i\theta_iX_i(G) = 0.
@@ -196,17 +196,11 @@ $$
   \end{cases}
 $$
 
-we have $m = \sum_{i<j} \sigma_{ij}$ and following the construct of partition function $Z$ we end up with $Z = [1 + e^{-\theta}]^{\binom{n}{2}}$. We know that free energy $F = -ln Z$. Hence for our case $F = -\binom{n}{2} ln(1 + e^{-\theta})$. Now we can obtain the expected value of our observable by differentiating the free energy term with the respective Lagrange multiplier. In this case 
+we have $m = \sum_{i<j} \sigma_{ij}$ and following the construct of partition function $Z$ we end up with $Z = [1 + e^{-\theta}]^{\binom{n}{2}}$. We know that free energy $F = -ln Z$. Hence for our case $F = -\binom{n}{2} ln(1 + e^{-\theta})$
 
-$$
-   \langle m \rangle = \frac{\partial F}{\partial \theta}
-$$
+The following \href{https://math.stackexchange.com/questions/705945/how-to-interchange-a-sum-and-a-product}{Stackexchange answer} helps in understanding the intermediate steps in equation (12) of the  \href{https://arxiv.org/pdf/cond-mat/0405566.pdf}{paper} by J. Park and Newman \emph(Statistical Mechanics of Networks)
 
-Compare this with a thermodynamical system.
 
-The following \href{https://math.stackexchange.com/questions/705945/how-to-interchange-a-sum-and-a-product}{stack-exchange answer} helps in understanding the intermediate steps in equation (12), to obtain $Z$, in the  \href{https://arxiv.org/pdf/cond-mat/0405566.pdf}{paper} by J. Park and Newman \emph(Statistical Mechanics of Networks)
-
-In the above case we discuss a simple example to see a direct analogy between statistical mechanics and network theory. We can have a complicated definition of Hamiltonian based on the network structure and choice of observables.
 \subsection{Recommended reading}
 There are several good books on complex networks, including \emph{Lectures on Complex Networks} by S.N. Dorogovtsev and \emph{The Structure of Complex Networks} by E. Estrada, but some of the best content is in the form of journal survey articles. My picks are the two by M.E.J. Newman: \emph{The Structure and Function of Complex Networks} and, joint with J. Park \emph{Statistical Mechanics of Networks}. I used both of these extensively in writing this section. Also good is \emph{Statistical Mechanics of Complex Networks} by R. Albert and A.-L. Barabasi. For a good survey of generative models for power law distributions, see the survey article by Mitzenmacher.
 
