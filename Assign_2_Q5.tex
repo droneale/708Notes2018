@@ -1,0 +1,89 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+
+
+\begin{document}
+	\title{Assignment 2, Physic 708 Q5}
+	
+	\author{Sohan Ghodla}
+	\maketitle
+	
+\textbf{Boltzmann's approach to the problem of the arrow of time}\\
+
+Most macroscopic phenomena are irreversible: They would look quite different, and in fact usually quite astonishing, if run backwards in time.
+
+This irreversible behavior must somehow be a consequence of the (more) fundamental microscopic laws governing the behavior
+of the macroscopic systems.
+But these microscopic laws are symmetric under time reversal, and their solutions, running backwards in time, are also solutions of the equations of motion. The correct detailed resolution of this apparent
+paradox was provided by Boltzmann.
+
+The problem of irreversibility can be regarded as having two parts: an easy part and a hard part.\\
+
+\textbf{The Easy Part}
+
+\begin{center}
+\includegraphics[scale=.65]{Untitled1.png}
+Fig. 1. Snapshots of a gas in a box
+\end{center}
+
+Consider, for example the sequence of snapshots of a gas in a box illustrated
+in Fig. 1. We see here the transition from a low entropy non-equilibrium state on the left, with the gas entirely on the bottom of the box, through states of higher entropy, with the gas expanding into the full box, until at the right we have a high entropy equilibrium state with the gas uniformly distributed throughout the box. Why should its entropy tend to be larger at a later time?
+A complete description of the state of the gas is provided by its phase point X, a point in the phase space of possible microscopic states of the gas. \textit{Many different phase points correspond to each of the snapshots in Fig. 1}. Also each phase point have equal probability of occurrence. There are, for a system at a given energy E, far more equilibrium phase points than non-equilibrium phase points, overwhelming more.\\
+
+Consider the microscopic state X = ($q_{i}$,$p_{i})$ consisting of a large number (N) of identical particles forming a gas in a box $\Lambda$ , with positions $q_i$ ∈ Λ and momenta $p_i$. The evolution of the system is determined, via Hamilton's equations of motion. Since the energy is a constant of this motion, we may take as the relevant set of possible states, not the full phase space but only an energy hyper-surface (this is the constraint in the phase space)\\
+Each snapshot of the Fig.1 correspond to some subset $\Omega_{m}$ of point on this hyper-surface $\Omega_{E}$.\\
+Now partition the phase space into macroscopically small but microscopically large subsets and specify the approx number of particles in each subset by $n_a$. Each such partition determines a unique macro state and a set of all such subsets define a partition of our phase space into macrostates.\\
+
+
+Different macrostates typically have vastly different sizes, and this differenc is conveniently quantified by Boltzmann’s entropy: $$S(X) = klog|\Gamma (X)|$$
+where  $\Gamma(X)$ $\subset \Omega_{E} $. It can be seen that Boltzmann’s entropy
+resembles the thermodynamic entropy, to which the Second Law refers. We expect systems to evolve towards a subset in phase space that occupies most of the volume. Since the equilibrium state occupies most of the volume, hence all system mostly spend nearly all of their time in this subset.\\ \\
+
+\textbf{The Hard Part}\\
+
+Now the question is why should there be an arrow of time in our universe,since at the fundamental level,it is governed by reversible microscopic laws? According to Boltzmann, systems evolve in the direction of higher entropy and hence our universe has a arrow of time because it's doing the same. Let's first answer the question: \textit{What is the origin of the low entropy initial states?} If they are so “unlikely,” why should systems find themselves in such states?
+
+Here is Sheldon Goldstein's answer \cite{S}:\\
+In many cases, the answer is that we or an experimenter created them, from states of lower entropy still. If we continue to ask such questions, we come to the conclusion that the cause of low entropy states on earth, the source in effect of negative entropy, is our sun, whose high energy photons are absorbed by the earth, which converts them to a great many
+low energy photons (having together much larger entropy), permitting entropy decreasing
+processes to occur on our planet without violation of overall entropy non-decrease. And if we push further we eventually arrive at a cosmological low entropy state, in the distant past, for the universe as a whole. \\
+
+Figure 2, taken from Roger Penrose's The Emperor's New Mind
+
+\begin{center}
+\includegraphics[scale=.75]{Untitled2.png}
+
+Fig. 2. In order to produce a universe resembling ours, the Creator
+would have to aim for a spot of volume $\frac{1}{{{10}^{10}}^{123}}$ of the entire volume
+\end{center}
+
+
+
+Now it's suggested that the reason for the universe to have begun in such an improbable microstate is because it arouse of a fluctuation out of equilibrium (Such fluctuations eventually should occur in an ergodic universe) 
+
+But some like Feynman reject the answer. If the universe emerged from a low entropy state that arose from a fluctuation, then that fluctuation could have happened even to a state like the present state of the universe (for us to have the universe as it is), and not to a state of much lower entropy.
+
+But there is overwhelmingly strong reason to believe that in the early universe, matter was (very nearly) uniformly distributed and (very nearly) in thermal equilibrium at uniform temperature. Doesn't this correspond to a state of (very nearly) maximum entropy, not a state of low entropy? \cite{R}
+
+In fact it would, if the system is subjected to short range forces only. But we haven't included gravity yet. For a sufficiently large system, the entropy can always be increased by clumping the system and using the binding energy that is thereby released to heat up the system. Therefore for a sufficiently large system, the state of maximum entropy will not correspond to a homogeneous distribution of matter but rather will contain a large black hole. 
+
+\begin{center}
+\includegraphics[scale=.75]{Untitled3.png}
+
+Fig.3
+\end{center}
+
+Therefore what is arguably the most random and most probable initial state for a system of gravitating particles is the one in which they are uniformly distributed over space
+and it also happens to be a state of very low entropy, exactly what is needed to complete Boltzmann's account of irreversibility. Of course now the question begs: if the cause of the early low entropy isn't a fluctuation then what is it? This question is still debatable and I'll not go further with it in this article.
+
+\begin{thebibliography}{9}
+	
+	\bibitem{S}
+	Goldstein, S. (2001). Boltzmann’s approach to statistical mechanics. In Chance in physics (pp. 39-54). Springer, Berlin, Heidelberg.
+	
+	\bibitem{R}
+	Wald, R. M. (2006). The arrow of time and the initial conditions of the universe. Studies in History and Philosophy of Science Part B: Studies in History and Philosophy of Modern Physics, 37(3), 394-398.
+	
+\end{thebibliography}
+
+\end{document}
