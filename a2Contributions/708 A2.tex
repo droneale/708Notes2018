@@ -1,0 +1,72 @@
+\documentclass[a4paper, 12pt]{article}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+ 
+%% Sets page size and margins
+\usepackage[a4paper,top=3cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+%\usepackage{biblatex}
+%\addbibresource{references.bib}
+
+\title{708 Assignment 2}
+\date{}
+\author{Karan Dasgupta}
+%===============================================================================
+\begin{document}
+\maketitle
+
+%\begin{abstract}
+%Your abstract.
+%\end{abstract}
+
+\section*{A Review of "Statistical Mechanics of Economics I", Kusmartsev (2011)}
+
+Statistical Mechanics is an extremely useful tool that we can use to describe lots of situations, but nowhere is its usefulness demonstrated more than in describing complex systems. One such system is the economy and the market. When analysing the economy, we deal with hundreds of variables – demand and supply, technology, geopolitics, and human psychology, to name just a few. Using statistical mechanics, we can isolate variables that we are interested in, make a few assumptions, and in doing so reduce the complexity of the economic system to a more familiar problem in statistical physics. 
+
+In statistical mechanics, we often deal with particles. In general, when we model the systems and how they change over time, we often look at an initial value problem, and by looking at how each variable behaves, we can try and model the system as it changes. In the case of particles, the more particles there are the harder this becomes. Similarly, the economy and the market are complex and there are so many variables involved that even if it was possible to know the initial values, it would be impossible to know how each variable behaves. Because of the complexity of the variables that we deal with, we deal with the economic system in the same way that statistical mechanics deals with variables in thermodynamics – that is, to look at the average behaviour of the particles in the system, to predict some equilibrium steady state. Instead of looking at ensembles of particles, we look at an ensemble of economic agents – that could be consumers, businesses, that which we term “trading units” \cite{kusmartsev}. 
+
+We can apply the ergodic hypothesis – that over a particular range of time, the system goes through all possible states, so we need only take the average at one particular time. This is one of the basic postulates of statistical mechanics, and more accurately, states that “the time average of a system thermodynamic variable is equal to its ensemble average, which is the average over the instantaneous values of the variable in each member of the ensemble as eta, the number of ensembles, tends to infinity” – there is thus an equivalency between the time average and the ensemble average\cite{laurendeau}.  As we are looking at how the market changes over time, at any one time we can take a snapshot or cross-section of the market. This is what we call a microstate and would be equivalent to looking at the instantaneous values of variables of an ensemble of particles. By averaging across lots of these snapshots, we can determine some general averages relevant variables and thereby the average behaviour – this is termed the macrostate \cite{laurendeau}. 
+
+In statistical mechanics, we usually deal with three kinds of ensembles: the microcanonical, canonical, and grand-canonical, all of which describe some macroscopic system. The microcanonical ensemble considers the all snapshots to be an isolated system, for which the total value of each relevant variable is conserved, usually N (the number of particles), V (the volume), and U (the internal energy). We also have the canonical ensemble, where the temperature is held constant – termed a “closed, isothermal system”. For an economy, this means the number of trading agents, N, stays constant, but the amount of money M is not. Lastly, we have the grand-canonical ensemble, where both N and M are variable, and for an economy this makes the most sense, as both populations and money are not fixed, in reality \cite{KUSMARTSEV}. 
+Mathematically, we would like to use a partition function to describe this grand-canonical ensemble. A partition function describes a statistical ensemble, and are functions of the state variables, that is, the relevant variable that we want to look at in the economic system. Additionally, it indicates how particles or in our case trading agents are partitioned amongst the various states it could be in. 
+
+Say we have $A$ distinguishable snapshots, and $a_i$ members of the system. We now need to decide relevant variables. Each member $a_i$ could have money, $M_i$, debt $D_i$, average wealth $V_i$ such that:
+$$ \sum_i a_i = A, \sum_i a_iM_i = MA, \sum_i a_iN_i = AN, \sum_i a_iD_i = DA, \sum_i a_iV_i = VA, $$
+All of these are conditions we must fulfil, and we could add even more if we'd like.
+Each configuration $\{a_i\}$ defines a state of the ensemble, and each of these configuration has equal probability. So we have: 
+$$ \Omega(a)=\frac{A!}{\prod_i a_i!}  $$ possible ways to create this particular state (snapshot).
+Using Lagrangian optimisation, we can maximise $\Omega$ with respect to the conditions above, and then solving the problem, we get: $$a_j = exp(-1-\alpha-\beta M_i - \gamma N_i - \delta D_i - \kappa V_i + ...) $$
+Where $\alpha$, $\beta$, $\gamma$, $\delta$, $\kappa$ are all Lagrange multipliers. 
+We can eliminate the $\alpha$ by using $A = \sum_i a_i = e^(-1-\alpha) Z $. Where we get the partition function:
+$$ Z = \sum_i exp(-\beta(M_i-\mu N_i-\nu D_i+p V_i)) $$
+Where $\mu$, $\nu$ and $p$ are defined in terms of the relevant Lagrange multiplier and $\beta$. This could be simplified to just ONE variable that we have a constraint on: $ Z= \sum_i exp(-\beta M_i)$.
+From this partition function we can rewrite N, D, V, M in familiar thermodynamic terms:
+$$ N = \left(\frac{1}{\beta}\right) \left(\frac{\partial log Z}{\partial \mu} \right)_{\beta, \nu, p} $$
+$$ D = \left(\frac{1}{\beta}\right) \left(\frac{\partial log Z}{\partial \nu} \right)_{\beta, \mu, p} $$
+$$ V = -\left(\frac{1}{\beta}\right) \left(\frac{\partial log Z}{\partial p} \right)_{\beta, \mu, \nu} $$
+$$ M_i-\mu N_i-\nu D_i+p V_i = -\left(\frac{\partial log Z}{\partial \beta} \right)_{p, \mu, \nu}$$
+We can also pull out the familiar expression for entropy as the log of all possible states:
+$$ S = -\frac{1}{A} log(\Omega_{max})$$
+
+And finally we can rewrite the above equation as: 
+$$\delta M = T \delta S - p \delta V + \mu \delta N + \nu \delta D $$
+a familiar restatement of the First Law of Thermodynamics - the First Law of Market, where $ \beta = 1/T$. 
+
+We can explain T, the temperature, as the average income of the majority of the population, and the chemical potential $\mu$ would be connected to the stability of a market or the attractiveness of the market to investors \cite{kusmartsev}. 
+
+Finally, the paper goes on to match this Law with data in the USA, which follows a Bose-Einstein distribution fit almost perfectly \cite{kusmartsev}.
+
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+
+\end{document}
