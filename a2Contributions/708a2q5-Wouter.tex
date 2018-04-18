@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\newcommand{\calG}{\mathcal{G}}
+\title{Assignment 2 Question 5}
+\author{Wouter van Zeist}
+\date{}
+\begin{document}
+	\maketitle
+	
+We will examine the following journal article: M. G. Paterlini and D. M. Ferguson, "Constant temperature simulations using the Langevin equation with velocity Verlet integration," \textit{Chem. Phys.}, vol. 236, no. 1-3, pp. 243-252, 1998.
+
+This journal article is about computationally implementing/solving an equation called the generalised Langevin equation using the Verlet method of numerical integration. The Langevin equation is an equation of motion, which was originally written in the following form to describe Brownian motion:
+$$m\frac{d^{2}{\bf x}}{dt^{2}} = -\lambda \frac{d{\bf x}}{dt} + \eta(t)$$
+where ${\bf x}$ is the position of a particle and $\eta$ a noise term. This journal article uses a generalised form of this equation, which involves systems of many particles rather than just a single particle and is used for temperature coupling schemes in applications of molecular chemistry, to help control the temperatures of substances used in experiments. The form of the Langevin equation used in the article is as follows:
+$$m\dot{\bf v}_{i}(t) = {\bf F}_{i}(t)-m_{i}\gamma_{i}{\bf v}_{i}(t)+{\bf R}_{i}(t)$$
+where, for a particle $i$, ${\bf v}_{i}$ is its velocity, $m_{i}$ its mass, ${\bf R}_{i}$ a stochastic (noise) force satisfying a complicated condition we won't repeat here. ${\bf F}_{i}$ and $\gamma_{i}$ are the systematic force and the friction coefficient, respectively, which can be altered to control the temperature.
+
+The Verlet or leapfrog method of integration is a method of numerically approximating the integration of a function when it cannot be feasibly calculated analytically. Such numerical integration is often used in statistical mechanics when dealing with systems of very many particles, which would require extreme amounts of computational power to solve analytically - such as the molecular systems for which the Langevin equation mentioned in the article is used.
+
+The Verlet method is used as follows: let ${\bf q}$ be the position of a particle, and ${\bf p} = \dot{\bf q}$ be its velocity, which in turn changes according to some differential equation $\dot{\bf p} = f({\bf q})$. We will compute these two quantities at discrete points in time, separated by a time interval $\Delta t$. The key characteristic of the Verlet method is that some of the values are calculated on a staggered grid offset from the other values by half a time-step; the Euler method of integration does not do this and is as a result simpler, but less accurate.
+
+${\bf q}$ and ${\bf p}$ are updated at each time-step as follows:
+\begin{eqnarray*}
+	{\bf p}(t+\frac{\Delta t}{2}) &=& {\bf p}(t) + \frac{\Delta t}{2}f({\bf q}(t))\\
+	{\bf q}(t+\Delta t) &=& {\bf q}(t) + \Delta t{\bf p}(t+\frac{\Delta t}{2})\\
+	{\bf p}(t+\Delta t) &=& {\bf p}(t+\frac{\Delta t}{2}) + \frac{\Delta t}{2}f({\bf q}(t+\Delta t))
+\end{eqnarray*}
+
+If the values of {\bf p} are not required at the end of each step, this can be reduced to:
+\begin{eqnarray*}
+	{\bf p}(t+\frac{\Delta t}{2}) &=& {\bf p}(t-\frac{\Delta t}{2}) + \Delta tf({\bf q}(t))\\
+	{\bf p}(t+\Delta t) &=& {\bf q}(t) + \Delta t{\bf p}(t + \frac{\Delta t}{2})
+\end{eqnarray*}
+
+The journal article used the Verlet method to obtain the following two equations for computing the Langevin equation:
+\begin{eqnarray*}
+	{\bf x}(t+\Delta t) &=& {\bf x}(t) + c_{1}{\bf v}(t)\Delta{t}+c_{2}{\bf F}(t)m\Delta t^{2} + \delta r^{G}\\
+	{\bf v}(t+\Delta t) &=& c_{0}{\bf v}(t) + c_{0}c_{2}c_{1}{\bf F}(t)m\Delta t + \gamma\Delta t - c_{0}c_{1}{\bf F}(t+\Delta t)m\Delta t + \delta v^{G}
+\end{eqnarray*}
+where the $c$ terms are constants depending on $\gamma$ and $\Delta t$, and the $\delta$ terms are Gaussian noise terms.
+
+These were then used to obtain the following staggered-grid equations:
+\begin{eqnarray*}
+	{\bf v}(t+\frac{\Delta t}{2}) &=& c_{0}{\bf v}(t) + \frac{c_{0}c_{2}}{c_{1}}{\bf F}(t)m\Delta t + \delta v^{G}\\
+	{\bf v}(t+\Delta t) &=& {\bf v}(t+\frac{\Delta t}{2}) + \frac{1}{\gamma\Delta t}(1-\frac{c_{0}}{c_{1}}){\bf F}(t+\Delta t)m\Delta t
+\end{eqnarray*}
+
+\end{document}
