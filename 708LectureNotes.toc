@@ -1,62 +1,63 @@
-\contentsline {section}{\numberline {1}Thermodynamics - A Refresher}{2}
-\contentsline {subsection}{\numberline {1.1}The Four Laws of Thermodynamics}{3}
-\contentsline {subsection}{\numberline {1.2}Zeroth Law}{3}
-\contentsline {subsection}{\numberline {1.3}First Law}{4}
-\contentsline {subsection}{\numberline {1.4}Third Law}{4}
-\contentsline {subsection}{\numberline {1.5}Heat Capacity}{6}
-\contentsline {subsection}{\numberline {1.6}Intensive \& Extensive Variables}{6}
-\contentsline {subsection}{\numberline {1.7}The Fundamental Hypothesis of Thermodynamics}{7}
-\contentsline {subsection}{\numberline {1.8}The Central Problem of Thermodynamics}{7}
-\contentsline {subsection}{\numberline {1.9}Suggested Reading}{9}
-\contentsline {section}{\numberline {2}Probability}{9}
-\contentsline {subsection}{\numberline {2.1}Probability generating functions}{10}
-\contentsline {subsection}{\numberline {2.2}Properties of generating functions}{10}
-\contentsline {subsection}{\numberline {2.3}The binomial distribution}{11}
-\contentsline {subsection}{\numberline {2.4}The Poisson distribution}{12}
-\contentsline {subsection}{\numberline {2.5}The expected long-run outcome of a binary process}{12}
-\contentsline {subsection}{\numberline {2.6}Brownian motion}{13}
-\contentsline {section}{\numberline {3}Statistical postulates}{14}
-\contentsline {subsection}{\numberline {3.1}An ideal gas}{14}
-\contentsline {subsection}{\numberline {3.2}Maxwell's postulates}{15}
-\contentsline {subsection}{\numberline {3.3}Equation of state}{15}
-\contentsline {section}{\numberline {4}Phase space, Hamiltonian dynamics, and the fundamental postulate of statistical mechanics}{16}
-\contentsline {subsection}{\numberline {4.1}Phase space}{16}
-\contentsline {subsection}{\numberline {4.2}Observables}{18}
-\contentsline {subsection}{\numberline {4.3}The fundamental postulate of statistical mechanics}{18}
-\contentsline {subsection}{\numberline {4.4}Symplectic transformations and phase space area preservation}{19}
-\contentsline {subsection}{\numberline {4.5}Liouville's theorem and preservation of phase space volume}{20}
-\contentsline {subsection}{\numberline {4.6}Recommended reading}{21}
-\contentsline {section}{\numberline {5}Molecular dynamics and simulating Hamiltonian Systems}{21}
-\contentsline {subsection}{\numberline {5.1}Numerical integration}{23}
-\contentsline {subsection}{\numberline {5.2}Recommended reading}{26}
-\contentsline {section}{\numberline {6}Ensembles}{26}
-\contentsline {subsection}{\numberline {6.1}The canonical ensemble}{27}
-\contentsline {subsection}{\numberline {6.2}Other ensembles}{29}
-\contentsline {subsubsection}{\numberline {6.2.1}The grand-canonical ensemble}{29}
-\contentsline {subsubsection}{\numberline {6.2.2}The $P-T$ ensemble}{30}
-\contentsline {subsection}{\numberline {6.3}Information theory and the Gibbs Formula for entropy}{30}
-\contentsline {subsection}{\numberline {6.4}Calculating things with ensembles}{31}
-\contentsline {subsubsection}{\numberline {6.4.1}Internal energy}{32}
-\contentsline {subsubsection}{\numberline {6.4.2}Specific heat}{32}
-\contentsline {subsubsection}{\numberline {6.4.3}Entropy}{33}
-\contentsline {subsubsection}{\numberline {6.4.4}Simple harmonic oscillator}{33}
-\contentsline {subsection}{\numberline {6.5}Recommended reading}{34}
-\contentsline {section}{\numberline {7}Quantum statistical mechanics}{34}
-\contentsline {subsection}{\numberline {7.1}A refresher: bra-ket notation}{35}
-\contentsline {subsection}{\numberline {7.2}Quantum micro-canonical ensemble}{36}
-\contentsline {subsection}{\numberline {7.3}Quantum canonical ensemble}{37}
-\contentsline {subsection}{\numberline {7.4}Quantum grand-canonical ensemble}{38}
-\contentsline {subsection}{\numberline {7.5}Systems of indistinguishable particles}{38}
-\contentsline {subsection}{\numberline {7.6}Fermionic and bosonic partition functions}{40}
-\contentsline {subsubsection}{\numberline {7.6.1}Bose-Einstein Statistics}{41}
-\contentsline {subsubsection}{\numberline {7.6.2}Fermi-Dirac statistics}{41}
-\contentsline {subsubsection}{\numberline {7.6.3}Maxwell-Boltzman statistics}{41}
-\contentsline {subsection}{\numberline {7.7}An example: the quantum harmonic oscillator}{42}
-\contentsline {subsection}{\numberline {7.8}Recommended reading}{43}
-\contentsline {section}{\numberline {8}Complex networks}{43}
-\contentsline {subsection}{\numberline {8.1}An introduction to graph theory \& networks}{44}
-\contentsline {subsection}{\numberline {8.2}Real-world networks: some examples}{45}
-\contentsline {subsection}{\numberline {8.3}Properties of networks}{46}
-\contentsline {subsection}{\numberline {8.4}Network growth models}{49}
-\contentsline {subsection}{\numberline {8.5}Exponential random graph models}{49}
-\contentsline {subsection}{\numberline {8.6}Recommended reading}{50}
+\contentsline {section}{\numberline {1}Thermodynamics - A Refresher}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}The Four Laws of Thermodynamics}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Zeroth Law}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}First Law}{4}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Third Law}{4}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Heat Capacity}{6}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}Intensive \& Extensive Variables}{6}{subsection.1.6}
+\contentsline {subsection}{\numberline {1.7}The Fundamental Hypothesis of Thermodynamics}{7}{subsection.1.7}
+\contentsline {subsection}{\numberline {1.8}The Central Problem of Thermodynamics}{7}{subsection.1.8}
+\contentsline {subsection}{\numberline {1.9}Suggested Reading}{9}{subsection.1.9}
+\contentsline {section}{\numberline {2}Probability}{9}{section.2}
+\contentsline {subsection}{\numberline {2.1}Probability generating functions}{10}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Properties of generating functions}{10}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}The binomial distribution}{11}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}The Poisson distribution}{12}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}The expected long-run outcome of a binary process}{12}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Brownian motion}{13}{subsection.2.6}
+\contentsline {section}{\numberline {3}Statistical postulates}{14}{section.3}
+\contentsline {subsection}{\numberline {3.1}An ideal gas}{14}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Maxwell's postulates}{15}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Equation of state}{15}{subsection.3.3}
+\contentsline {section}{\numberline {4}Phase space, Hamiltonian dynamics, and the fundamental postulate of statistical mechanics}{16}{section.4}
+\contentsline {subsection}{\numberline {4.1}Phase space}{16}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Observables}{18}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}The fundamental postulate of statistical mechanics}{18}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Symplectic transformations and phase space area preservation}{19}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Liouville's theorem and preservation of phase space volume}{20}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Recommended reading}{21}{subsection.4.6}
+\contentsline {section}{\numberline {5}Molecular dynamics and simulating Hamiltonian Systems}{21}{section.5}
+\contentsline {subsection}{\numberline {5.1}Numerical integration}{23}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Recommended reading}{26}{subsection.5.2}
+\contentsline {section}{\numberline {6}Ensembles}{26}{section.6}
+\contentsline {subsection}{\numberline {6.1}The canonical ensemble}{27}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Other ensembles}{29}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}The grand-canonical ensemble}{29}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}The $P-T$ ensemble}{30}{subsubsection.6.2.2}
+\contentsline {subsection}{\numberline {6.3}Information theory and the Gibbs Formula for entropy}{30}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Calculating things with ensembles}{31}{subsection.6.4}
+\contentsline {subsubsection}{\numberline {6.4.1}Internal energy}{32}{subsubsection.6.4.1}
+\contentsline {subsubsection}{\numberline {6.4.2}Specific heat}{32}{subsubsection.6.4.2}
+\contentsline {subsubsection}{\numberline {6.4.3}Entropy}{33}{subsubsection.6.4.3}
+\contentsline {subsubsection}{\numberline {6.4.4}Simple harmonic oscillator}{33}{subsubsection.6.4.4}
+\contentsline {subsection}{\numberline {6.5}Recommended reading}{34}{subsection.6.5}
+\contentsline {section}{\numberline {7}Quantum statistical mechanics}{34}{section.7}
+\contentsline {subsection}{\numberline {7.1}A refresher: bra-ket notation}{35}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Quantum micro-canonical ensemble}{36}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Quantum canonical ensemble}{37}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Quantum grand-canonical ensemble}{38}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Systems of indistinguishable particles}{38}{subsection.7.5}
+\contentsline {subsection}{\numberline {7.6}Fermionic and bosonic partition functions}{40}{subsection.7.6}
+\contentsline {subsubsection}{\numberline {7.6.1}Bose-Einstein Statistics}{41}{subsubsection.7.6.1}
+\contentsline {subsubsection}{\numberline {7.6.2}Fermi-Dirac statistics}{41}{subsubsection.7.6.2}
+\contentsline {subsubsection}{\numberline {7.6.3}Maxwell-Boltzman statistics}{41}{subsubsection.7.6.3}
+\contentsline {subsection}{\numberline {7.7}An example: the quantum harmonic oscillator}{42}{subsection.7.7}
+\contentsline {subsection}{\numberline {7.8}Recommended reading}{43}{subsection.7.8}
+\contentsline {section}{\numberline {8}Complex networks}{43}{section.8}
+\contentsline {subsection}{\numberline {8.1}An introduction to graph theory \& networks}{44}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Real-world networks: some examples}{45}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Properties of networks}{46}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.4}Probability Generating Functions \& Networks}{48}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.5}Network growth models}{49}{subsection.8.5}
+\contentsline {subsection}{\numberline {8.6}Exponential random graph models}{50}{subsection.8.6}
+\contentsline {subsection}{\numberline {8.7}Recommended reading}{52}{subsection.8.7}

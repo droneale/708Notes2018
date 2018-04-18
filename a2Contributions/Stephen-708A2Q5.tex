@@ -1,0 +1,76 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage[margin=1in]{geometry}
+\usepackage{caption}
+\usepackage{changepage}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\captionsetup{skip=0pt}
+\captionsetup{labelformat=empty}
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0em}
+
+\begin{document}
+	\title{Assignment 2, Physics 708}
+	\author{Stephen Chung}
+	\date{}
+	\maketitle
+		
+\begin{enumerate}	
+	\setcounter{enumi}{4}
+    \item The article \cite{arti} reviewed will consider a Thermodynamic study of krypton adsorbed on graphite using Statistical Physics analysis. The article presents a methodology used to find new and simple theoretical expressions that describe and match the adsorption isotherm of krypton onto graphite. This article is particularly useful for students to understand how such a theoretical concept (Thermodynamics and Statistical Mechanics) can play an important role experimentally.\\
+    \\
+    Several experimental data already exists for such phenomenon, but many older studies \cite{pari} containing derived theoretical models are vague and the derived constants remain irrelevant with the relationship with the physiochemical parameters involved in the adsorption process. Before beginning matching experimental data with a new theoretical model, some initial parameters must be derived to match the Thermodynamic postulates in order to present a more relevant and accurate model of the experiment.\\
+    \\
+    Since adsorption involves an exchange of particles from the free state to the adsorbed state, the investigation is approached by employing the grand canonical ensemble to consider the particle number variation. Thus, a chemical potential is introduced in the adsorption process \cite{chem}. As a first approximation, the adsorbed molecules are treated as an ideal gas \cite{chem} because the mutual interaction between the adsorbed molecules will be neglected.\\
+    By beginning with the grand canonical partition function, the article describes the microscopic properties of the adsorption process. By defining the state of occupation number $N_i$ which expresses the situation where the receptor site is placed \cite{theo,dye}, the expression is:
+    \[z_{gc} = \sum\limits_{N_i}e^{-\beta(\epsilon_i-\mu)N_i}\]
+    \\
+    From this, five types of grand canonical partition function (from five different isotherms) can be expressed for a Monolayer model and thus derive an expression of the adsorbed atoms against the pressure:
+    
+    \[N_a = \frac{n_1N_{1M}}{1+(P_1/P)^{n_1}} + \frac{n_2N_{2M}}{1+(P_2/P)^{n_2}} + \frac{n_3N_{3M}}{1+(P_3/P)^{n_3}} + \frac{n_4N_{4M}}{1+(P_4/P)^{n_4}} + \frac{n_5N_{5M}}{1+(P_5/P)^{n_5}}\]
+	Where $P_{i = 1,2,3,4,5}$ represents the pressure at which the half of the totality of receptor site type $i$ are occupied, $n_i$ is the number of molecules per site and $N_{Mi}$ is the density of receptor sites.\\
+	\newpage
+	From this, by defining the molar adsorption energy of the gaseous in the sites type $i$, we can get an expression for pressure:
+	\[P_i = P_0e^{(-\Delta E_i^a)/RT}\]
+	Where $P_0$ is the saturated vapor pressure of the gas, $R$ is the ideal gaseous constant, and $T$ is the temperature in kelvin.\\
+
+	Using the following derived expressions with experimental results, Thermodynamic Properties can now be considered, such as:
+	
+	\begin{itemize}
+		\item Adsorption Entropy ($J = -k_BT\ln Z_{gc} = -\frac{\partial\ln Z_{gc}}{\partial\beta}$)
+		\item Gibbs Free Energy ($G = \mu nN_0 = \mu Q_a$ where $\mu = k_BT\ln\frac{\beta P}{Z_{gc}}$)
+		\item Internal Energy ($U = -\frac{\partial\ln Z_{gc}}{\partial\beta} + \frac{\mu}{\beta}\big(\frac{\partial\ln Z_{gc}}{\partial\mu}\big)$)
+	\end{itemize}
+    From this article, the students are able to empirically find use for Thermodynamic properties, using the grand canonical ensemble. By discovering the significant of these properties, theoretical models can be constructed and modified accordingly thus signifying the importance of Statistical Mechanics!
+\end{enumerate}
+
+\begin{thebibliography}{9}
+	\bibitem{arti}
+	M.Ben Yahia, F.Aouaini, M.A.Hachicha, S.Knani, M.Khalfaoui, A.Ben Lamine\\
+	\textit{Thermodynamic study of krypton adsorbed on graphite using a statistical physics treatment}\\
+	Physica B: Condensed Matter, Vol 419. (2013), pp, 100-104
+	\bibitem{chem}
+	A. Ben Lamine, Y. Bouazra\\
+	\textit{Application of statistical thermodynamics to the olfaction mechanism}\\
+	Chemical senses, 22 (1997), p. 67
+	\bibitem{theo}
+	M. Khalfaoui, S. Knani, M'A Hachicha, A. Ben Lamine\\
+	\textit{New theoretical expressions for the five adsorption type isotherms classified by BET based on statistical physics treatment}\\
+	Journal of Colloid and Interface science, 263 (2003), pp. 350-356
+	\bibitem{dye}
+	M. Khalfaoui, S. Knani, M'A Hachicha, A. Ben Lamine\\
+	\textit{Dye Adsorption by Modified Cotton. Steric and Energetic Interpretations of Model Parameter Behaviours}\\
+	Adsorption Science \& Technology, 20 (1) (2002), pp.33-47
+	\bibitem{pari}
+	B. Diu, C. Guthmann, D. Lederer, B. Roulet\\
+	\textit{Physique Statistique}\\
+	Hermann, Paris (1989)
+\end{thebibliography}
+\end{document}
