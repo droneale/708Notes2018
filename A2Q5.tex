@@ -1,0 +1,67 @@
+%RenzDelaCruz
+\documentclass[12pt, letterpaper, oneside, article]{memoir}
+\usepackage[USenglish]{babel}
+\usepackage{graphicx}
+\usepackage[numbers, square, sort&compress]{natbib}
+\usepackage{setspace}
+\usepackage{verbatim}
+\usepackage{eso-pic}
+\usepackage{makeidx}
+\citeindextrue
+\makeindex
+\usepackage[T1]{fontenc}
+\renewcommand*\rmdefault{phv}
+\usepackage[sumlimits, intlimits, namelimits]{amsmath}
+\usepackage[italic]{mathastext}
+\usepackage[sfdefault=fav,scaled=0.875]{isomath}
+\usepackage{chngcntr}
+\counterwithout{equation}{chapter}
+\chapterstyle{article}
+\setsecnumdepth{subsubsection}
+\settocdepth{subsubsection}
+\usepackage{indentfirst}
+\newlength{\myparindent}
+\setlength{\myparindent}{\parindent}
+\setlength{\textheight}{0.75\paperheight}
+\setlength{\textwidth}{0.66\paperwidth}
+\setlength{\oddsidemargin}{1.75cm}
+\setlength{\evensidemargin}{\oddsidemargin}
+\makeevenfoot{plain}{}{}{\thepage}
+\makeoddfoot{plain}{}{}{\thepage}
+
+\begin{document}
+
+Assignment\\
+
+Research Article:\\
+\begin{center}
+{Molecular Dynamics Simulations of Cavitation Bubble Collapse and Sonoluminescence}
+\end{center}
+
+The formation of cavities in a liquid subjected to rapid changes of pressure is called cavitation. The cavitation bubble can also form and collapse when subjected to either high energy lasers (optical cavitation) [1], or ultrasonic waves [2]. The bubble medium is highly compressed and heated in its collapsing stage[3]. Consequently, collapsing bubbles may demonstrate the phenomenon called cavitation bubble luminescence[2,3,5]. The dynamics of the radial bubble behaviour originates from Lord Rayleigh's equations [1,4].\\
+
+The research talked about the dynamics of the collapsing of the cavitation bubble using molecular dynamics simulation. The dynamics of the  cavitation bubble was modeled using the Rayleigh-Plesset equation.
+$$R\ddot{R}+\frac{3}{2}\dot{R}^2=\frac{1}{\rho_1}(P_1-p_\infty)+\frac{R}{\rho_1 c_1}(\dot{P}(R,t))-\dot{p_\infty}$$
+$$P_1 = P(R,t)-\frac{2\sigma}{R}-4\rho_1 v\frac{\dot{R}}{R}$$
+$$p_\infty=p_0+p_ac (t):=p_0 - p_a sin(2 \pi v_a t)$$\\
+
+The chemical properties of the vapours produced in the cavitation process was also considered in the model as well as the mass and energy transfer through the bubble wall. In the model, particles colliding in the collapsing bubble wall wherein heat is transferred to the bubble medium. This results to changes in the particle velocity and results to a change in bubble wall temperature. The hard-sphere model was used therefore the Lennard-Jones potential was also considered. The simulation revealed the changes of bubble temperatures, density and pressure of a single-bubble sonoluminescence. To simulate the luminescence, a Bremsstrahlung model is used. Bremsstrahlung requires high temperature ionizing gas. When these gases accelerate or decelerate; light is emitted. The initial distribution of the particles in the bubble is done by placing the particles on a regular lattice with each component of the velocity is assigned as a random value according to the Maxwell-Boltzmann distribution. The particle numbers, vapour properties and reaction products were revealed in the bubble in throughout the process of cavitation. The parameters that were varied in the study were the sound pressure amplitude of the bubble in water, mixing of noble gases in the medium and the accomodation coefficients for mass and energy exchange through the bubble wall. The particle numbers used in the simulation ranges from 1 million to 10 million. However, most calculations used 1 million particles to save computer run time. The molecular dynamics code was verified by comparing the results from using the molecular dynamics results with the solutions obtained from using continuum mechanics calculations for the Euler equations.\\
+
+The paper used a lot of molecular dynamics which we have covered in the lectures in SM in conjunction to other specific fields such as acoustics, plasma physics and chemistry. The model equation used in this paper is primarily the Rayleigh-Plesset equation. Using the things we have learned in SM, I should be able to derive an expression of the temperature or pressure of the bubble as it is growing and collapsing through time. Using some Hamiltonian mechanics, we should be able to approximate the vapour particle velocity inside the bubble through time. The heat transfer from the bubble surface to the medium can also be calculated from the collision of the vapour particles to the bubble wall (kinetic energy translated to temperature change!). By manipulating the state of the system such as changing the number of particles, the pressure of the medium and the initial temperature of the medium will affect the behaviour of the cavitation bubble. By introducing some random addition as the bubble grows or collapses to temperature or pressure, it could drastically affect the bubble dynamics!\\
+
+
+References:\\
+
+[1] Ohl, C.-D.; Kurz, T.; Geisler, R.; Lindau, O.; Lauterborn, W. Bubble Dynamics, Shock waves and Sonoluminescence. 1999
+
+[2] W. Lauterborn; T. Kurz; R. Geisler; D. Schanz; O. Lindau.Acoustic Cavitation, Bubble dynamics and Sonoluminescence. 2007
+
+[3] Schanz, D., Metten, B., Kurz, T., Lauterborn, W. Molecular Dynamics Simulations of Cavitation Bubble Collapse and Sonoluminescence
+
+[4] Yasui, K. Acoustic Cavitation and Bubble Dynamics. 2018
+
+[5] Park, S., Weng, J.G., Chang. Cavitation and Bubble Nucleation using Molecular Dynamics Simulation. 2000\\
+
+-Renz Dela Cruz
+\end{document}
+
